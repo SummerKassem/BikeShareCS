@@ -16,25 +16,29 @@
 
 \setlength\parindent{0pt}
 
+\graphicspath{{images/}}
+
 \begin{document}
 \title{Bike-Share Case Study}
 \date{}
 \maketitle
 
-This report provides the results and step-step explanation of the data analysis performed for a bike sharing case-study. The data belongs to a bike-sharing company that has two kinds of users: annual members and casual riders. The goal of the case-study was to identify how annual members and casual riders use the bikes differently in order to help the stake-holders decide whether or not to target converting casual riders into annual members in the next marketing campaign. The data about the bike-rides used in this case-study was between January-November 2023, each month was stored in a csv file, and was downloaded from \url{https://divvy-tripdata.s3.amazonaws.com/index.html}. 
+This report provides the results as well as the step-by-step explanation of the data analysis performed for a bike sharing case-study. The data belongs to a bike-sharing company that has two kinds of users: annual members and casual riders. The goal of the case-study was to identify how annual members and casual riders use the bikes differently in order to help the stake-holders decide whether or not to target converting casual riders into annual members in the next marketing campaign. The data about the bike rides used in this case-study was between January-November 2023, each month was stored in a csv file, and was downloaded from \url{https://divvy-tripdata.s3.amazonaws.com/index.html}. 
 
-\section*{Data cleaning:}
-The code that was used to perform the data cleaning can be found in the Jupyter Notebook \href{https://github.com/SummerKassem/BikeShareCS/blob/main/Code/cleaning.ipynb}{cleaning.ipynb}. Here are the main functions and what they do.
+\section*{Data-Set exploration \& cleaning:}
+The code that was used to perform the data exploration can be found in the Jupyter Notebook \href{https://github.com/SummerKassem/BikeShareCS/blob/main/Code/cleaning.ipynb}{cleaning.ipynb}. Here are the main functions and what they do.
 \begin{itemize}
 	\item \textit{read\_data}:\\
-	Here the csv files are read and stored into a dictionary called “data”. Each element in the dictionary has a key (the name of the month) and a value (the panada dataframe that holds the csv entries). This way the data for each corresponding month can be easily accessed by using the month as the key (e.g. data[“February”] retrieves the dataframe that holds the entries from February). Below we can see the first 5 entries of bike rides from February:
+	Here the csv files are read and stored into a dictionary called “data”. Each element in the dictionary has a key (the name of the month) and a value (the panada dataframe that holds the csv entries). This way the data for each corresponding month can be easily accessed by using the month as the key (e.g. data[“February”] retrieves the dataframe that holds the entries from February). Below we can see the first and last 5 entries of bike rides from May. Already we can see a couple of null (NaN).
+
 	\begin{figure}[h]
 	\hspace{-1.8cm}
-	\includegraphics[width=8 in, height = 2 in]{img1.png}
+	\includegraphics[width=8 in, height = 2 in]{imgMay.png}
 	\end{figure}
+	\pagebreak
 	
-	\item \textit{check\_entries}:\\
-	This method performs a few preliminary calculations. It finds the number of entries per file as well as the number of columns. From these it calculates the total number of bike rides in the data set. There is also an option within the method to remove duplicates. Therefore, the method is first called with the remove duplicates option deactivated, in order to get a preliminary feel of the dataset, how big it is, how the entires varies across the months. And then the method is called again with the remove duplicates option activated. The results are then written to output files which are shown below. 
+	\item \textit{count\_entries}:\\
+	This method performs collects preliminary information about the dataset. It finds the number of entries per file as well as the number of columns. From these it calculates the total number of bike rides in the data set. There is also an option within the method to remove duplicates. Therefore, the method is first called with the remove duplicates option deactivated, in order to get a preliminary feel of the dataset, how big it is, how the entires varies across the months. And then the method is called again with the remove duplicates option activated. The results are then written to output files which are shown below. 
 	
 	\begin{figure}[h]
 	\centering
@@ -48,7 +52,15 @@ The code that was used to perform the data cleaning can be found in the Jupyter 
 	\end{subfigure}
 	\end{figure}
 	
-On the left is the result of running the method without removing duplicates, and on the right is the result after removing duplicates. We can see that all the files have the same number of columns. So that is a good preliminary check on the consistency of the data across the months. In total the dataset contains 5.5 Million entries, with an average of 500,000 entries per month. So the dataset is relatively large. The number of entries before and after removing duplicates are identical, therefore the original dataset did not have any duplicates.
+On the left is the result of running the method without removing duplicates, and on the right is the result after removing duplicates. We can see that all the files have the same number of columns. So that is a good preliminary check on the consistency of the data across the months. In total the dataset contains almost 5.5 Million entries, with an average of approximately 500,000 entries per month. The number of entries before and after removing duplicates is identical, therefore the original dataset did not have any duplicates. \\
+
+	\item \textit{check\_NAN}:\\
+	Given that a brief look at the dataset already showed a couple of NaN values, this method calculates the percentage of NaN values using the pandas function \textit{isna()}. The number of null values for each column is calculated for each month and the results are shown below. As we can see the columns \textit{start\_station\_name}, \textit{start\_station\_id}, \textit{end\_station\_name}, \textit{end\_station\_id} in every month have around 13-17\% null values. The columns \textit{end\_lat} and \textit{end\_long} have less than 1\% null values. 
+	\begin{figure}[ht]
+	%\hspace{-1.8cm}
+	\includegraphics[width=6.5 in, height = 2 in]{imgNAN.png}
+	\end{figure}
+	 
 	
 \end{itemize} 
 
