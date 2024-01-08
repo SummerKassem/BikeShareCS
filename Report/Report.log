@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  20 DEC 2023 15:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  8 JAN 2024 17:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -377,48 +377,66 @@ Overfull \hbox (59.80594pt too wide) in paragraph at lines 35--37
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./images
 //imgMay.png>]
-<images//img2.png, id=21, 261.97874pt x 390.45876pt>
+<images//imgUnique.png, id=21, 219.82124pt x 255.95625pt>
+File: images//imgUnique.png Graphic file (type png)
+<use images//imgUnique.png>
+Package pdftex.def Info: images//imgUnique.png  used on input line 44.
+(pdftex.def)             Requested size: 131.89375pt x 153.57492pt.
+<images//img2.png, id=22, 261.97874pt x 390.45876pt>
 File: images//img2.png Graphic file (type png)
 <use images//img2.png>
-Package pdftex.def Info: images//img2.png  used on input line 47.
+Package pdftex.def Info: images//img2.png  used on input line 60.
 (pdftex.def)             Requested size: 130.98904pt x 195.2289pt.
-<images//img3.png, id=22, 263.98625pt x 393.47pt>
+<images//img3.png, id=23, 263.98625pt x 393.47pt>
 File: images//img3.png Graphic file (type png)
 <use images//img3.png>
-Package pdftex.def Info: images//img3.png  used on input line 51.
+Package pdftex.def Info: images//img3.png  used on input line 64.
 (pdftex.def)             Requested size: 131.9928pt x 196.73451pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2 <./images//imgUnique.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
 
  []
 
-<images//imgNAN.png, id=23, 1127.21124pt x 327.2225pt>
+<images//imgNAN.png, id=30, 1127.21124pt x 327.2225pt>
 File: images//imgNAN.png Graphic file (type png)
 <use images//imgNAN.png>
-Package pdftex.def Info: images//imgNAN.png  used on input line 61.
+Package pdftex.def Info: images//imgNAN.png  used on input line 75.
 (pdftex.def)             Requested size: 469.76193pt x 144.53755pt.
-[2 <./images//img2.png> <./images//img3.png>] [3 <./images//imgNAN.png>]
-(./Report.aux)
+[3 <./images//img2.png> <./images//img3.png> <./images//imgNAN.png>]
+File: images//img2.png Graphic file (type png)
+<use images//img2.png>
+Package pdftex.def Info: images//img2.png  used on input line 85.
+(pdftex.def)             Requested size: 130.98904pt x 195.2289pt.
+<images//img4.png, id=40, 268.00125pt x 393.47pt>
+File: images//img4.png Graphic file (type png)
+<use images//img4.png>
+Package pdftex.def Info: images//img4.png  used on input line 89.
+(pdftex.def)             Requested size: 134.00029pt x 196.73451pt.
+ [4 <./images//img4.png>] (./Report.aux)
 Package rerunfilecheck Info: File `Report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10584 strings out of 476025
- 172596 string characters out of 5790018
+ 10606 strings out of 476025
+ 173020 string characters out of 5790018
  1858388 words of memory out of 5000000
- 30924 multiletter control sequences out of 15000+600000
- 517525 words of font info for 49 fonts, out of 8000000 for 9000
+ 30941 multiletter control sequences out of 15000+600000
+ 517832 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,9n,77p,730b,501s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,9n,77p,1137b,510s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
 /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></u
 sr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></us
 r/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Report.pdf (3 pages, 596505 bytes).
+Output written on Report.pdf (4 pages, 736018 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
- 8 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 74 PDF objects out of 1000 (max. 8388607)
+ 45 compressed objects within 1 object stream
+ 11 named destinations out of 1000 (max. 500000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
