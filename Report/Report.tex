@@ -23,28 +23,32 @@
 \date{}
 \maketitle
 
-This report provides the results as well as the step-by-step explanation of the data analysis performed for a bike sharing case-study. The data belongs to a bike-sharing company that has two kinds of users: annual members and casual riders. The goal of the case-study was to identify how annual members and casual riders use the bikes differently in order to help the stake-holders decide whether or not to target converting casual riders into annual members in the next marketing campaign. The data used in this case-study was from January-November 2023. Each month's data was stored in a csv file, and was downloaded from \url{https://divvy-tripdata.s3.amazonaws.com/index.html}. 
+This report provides the results as well as the step-by-step explanation of the data analysis performed for a bike-sharing case study. The data belongs to a bike-sharing company that has two kinds of users: annual members and casual riders. The goal of the case study was to identify how annual members and casual riders use the bikes differently in order to help the stake-holders decide whether or not to target converting casual riders into annual members in the next marketing campaign. The data used in this case study was from January-November 2023. Each month's data was stored in a csv file, and was downloaded from \url{https://divvy-tripdata.s3.amazonaws.com/index.html}, and Python was used to perform the analysis.
 
-\section*{Data-Set exploration \& cleaning:}
+\section*{Dataset exploration \& cleaning:}
 The code that was used to perform the data exploration can be found in the Jupyter Notebook \href{https://github.com/SummerKassem/BikeShareCS/blob/main/Code/cleaning.ipynb}{cleaning.ipynb}. The main functions are explained below:
 \begin{itemize}
 	\item \textit{read\_data}:\\
-	Here the .csv file for the bike rides of each month is read and stored into a dictionary called “data”. Each element in the dictionary has a key (the name of the month) and a value (the panada dataframe that holds the csv entries). This simplifies the access of the entries for each corresponding month, by using the month as the key (e.g. data[“February”] retrieves the dataframe that holds the entries from February). Below we can see the first and last 5 entries of bike rides from May.
+	Here the .csv file for the bike rides of each month is read and stored into a dictionary called “data”. Each element in the dictionary has a key (the name of the month) and a value (the panada dataframe that holds the csv entries). This simplifies the access of the entries for each corresponding month, by using the month as the key (e.g. data[“May”] retrieves the dataframe that holds the entries from May). In Figure \ref{fig1} we can see the first and last 5 entries of bike rides from May:
 
 	\begin{figure}[h]
 	\hspace{-1.8cm}
 	\includegraphics[width=8 in, height = 2 in]{imgMay.png}
+	\caption{First and last 5 entries of bike rides from May (data[``May"])}
+	\label{fig1}
 	\end{figure}
 	\pagebreak
 	
-	From the entries of data[``May"], we can see that the data for May consists of 13 columns: 1) ride id, 2) the type of bike, 3-4) date and time for the start and end of the ride, 5-12) the name, id, latitude and longitude of the start and end stations, and finally 13) whether the user was a casual rider or a member. In order to explore the dataset a bit further, the pandas method \textit{nunique()} is used to return the number of unique values for each column in data[``May"]. The output is shown below. 
+	From the entries we can see that the data for May consists of 13 columns: 1) ride id, 2) the type of bike, 3-4) date and time for the start and end of the ride, 5-12) the name, id, latitude and longitude of the start and end stations, and finally 13) whether the user was a casual rider or a member. In order to explore the dataset a bit further, the pandas method \textit{nunique()} is used to return the number of unique values for each column in data[``May"]. The output is shown in Figure \ref{fig2}:
 	
 	\begin{figure}[h]
 	\centering
 	\includegraphics[scale = 0.6]{imgUnique.png} %[width=8 in, height = 2 in]
+	\caption{No. of unique values for every column in data[``May"]}
+	\label{fig2}
 	\end{figure}
 	
-	As should be expected, the only columns that have unique values are \textit{rideable\_type} and \textit{member\_casual}. The panadas method \textit{unique()} is then be used to find these values:  
+	As is expected, the columns \textit{rideable\_type} and \textit{member\_casual} have a small number of unique values, whereas the rest of the columns do not. The panadas method \textit{unique()} is then be used to find the unique values in these two columns:  
 	
 	\begin{itemize}
 	\item \textit{rideable\_type}: [electric\_bike, classic\_bike, docked\_bike]
@@ -52,7 +56,7 @@ The code that was used to perform the data exploration can be found in the Jupyt
 	\end{itemize}
 	
 	\item \textit{count\_entries}:\\
-	After the dataset is read into the dataframes, the method \textit{count\_entries} collects further information about the dataset. It finds the number of entries per file as well as the number of columns. This is done in order to check that the data format is consistent across the different files. Next, the method calculates the total number of bike rides in the entire dataset. There is an option within the method to remove duplicates. Therefore, the method is first called with the remove duplicates option deactivated, in order to get a preliminary feel of the dataset, how big it is, how the entires varies across the months. And then the method is called again with the remove duplicates option activated. The results are then written to output files which are shown below. 
+	After the dataset is read into the dataframes, the method \textit{count\_entries} is used to collect further information about the dataset. It finds the number of entries per file as well as the number of columns. This is done in order to check that the data format is consistent across the different files. Next, the method calculates the total number of bike rides in the entire dataset. There is an option within the method to remove duplicates. Therefore, the method is first called with the remove duplicates option deactivated, in order to get a preliminary feel of the dataset. And then the method is called again with the remove duplicates option activated. The results are then written to output files which are shown in Figure \ref{fig3}. 
 	
 	\begin{figure}[h]
 	\centering
@@ -64,20 +68,31 @@ The code that was used to perform the data exploration can be found in the Jupyt
 	\hspace{0.5 in}
 		\includegraphics[scale=0.5]{img3.png}
 	\end{subfigure}
+	\caption{No of entries and columns before and after removing duplicates}
+	\label{fig3}
 	\end{figure}
 	\pagebreak
 	
-On the left is the result of running the method without removing duplicates, and on the right is the result after removing duplicates. We can see that all the files have the same number of columns, which is a good preliminary indicator of the consistency of data across the months. In total the dataset contains almost 5.5 Million entries, with an average of approximately 500,000 entries per month. The number of entries before and after removing duplicates is identical, therefore the original dataset did not have any duplicates. \\
+On the left is the result of running the method without removing duplicates, and on the right is the result after removing duplicates. We can see that all the files have the same number of columns, which is a good preliminary indicator of the consistency of data across the months. In total the dataset contains almost 5.5 Million entries, with an average of approximately 500,000 entries per month. From January to March the number of rides is relatively lower than the average, which is expected as these are cold months. This is confirmed by the peak in the number of rides during the Summer months June to August. The number of entries before and after removing duplicates is identical, therefore the original dataset did not have any duplicates. \\
 
 	\item \textit{check\_NAN}:\\
-	Given that a brief look at the entries from May already showed a couple of NaN values, this method calculates the percentage of NaN values. The number of null values for each column is calculated using the pandas function \textit{isna()}. The percentage of null values for each column and month is shown below. As we can see the columns \textit{start\_station\_name}, \textit{start\_station\_id}, \textit{end\_station\_name}, \textit{end\_station\_id} in every month have around 13-17\% null values. The columns \textit{end\_lat} and \textit{end\_long} have less than 1\% null values. 
-	\begin{figure}[ht]
+	Given that a brief look at the entries from May already showed a couple of NaN values, this method calculates the percentage of NaN values (Figure \ref{fig1} \textit{end\_station\_name} \textit{end\_station\_id}). The number of null values for each column is calculated using the pandas function \textit{isna()}. The percentage of null values for each column and month is shown in Figure \ref{fig4}. As we can see the columns \textit{start\_station\_name}, \textit{start\_station\_id}, \textit{end\_station\_name}, \textit{end\_station\_id} in every month have 13-17\% null values. The columns \textit{end\_lat} and \textit{end\_long} have less than 1\% null values. 
+	
+	\begin{figure}[h]
 	%\hspace{-1.8cm}
 	\includegraphics[width=6.5 in, height = 2 in]{imgNAN.png}
+	\caption{Percentage of null values for each column across the various months}
+	\label{fig4}
 	\end{figure}
 	
-	\item \textit{drop\_NANs}:\\
-	Now that the percentage of null values has been identified, the next step is to determine how to deal with these null values. As previously mentioned, the goal of the analysis is to find out how casual riders differ from members. After exploring the dataset, it is clear that this information can be obtained by looking at how the ride lengths vary as well as the type of bikes used. The ride length can be determined either by looking at the time or the distance. Since the information related to the distance is harder to process as well as the fact that it contains null values, it is safer to rely on the time. Therefore, the relevant columns needed from this point onwards are the: \textit{ride\_id}, \textit{rideable\_type}, \textit{started\_at}, \textit{ended\_at}, \textit{member\_casual}. Which means that we can drop all the other columns which contain the null values. Therefore, the method \textit{drop\_NANs} drops the columns related to start and end stations and writes the data into a new dictionary called \textit{cleaned\_data}. After dropping the start and end stations, we can call the method \textit{count\_entries} once again, but this time passing along the \textit{cleaned\_data} in order to compare the cleaned dataset shape to the original one:
+	\item \textit{clean\_data}:\\
+	After exploring the dataset, we can see that the extractable information can be divided into information about the:
+	\begin{enumerate} 
+	\item rider (casual/member)
+	\item bike (type of bike used)
+	\item ride (length, date, location)
+	\end{enumerate}
+Since, the goal of the analysis is to find out how casual riders differ from members, it seems that the ride location is not of high relevance. It would have been important if for example the goal of the analysis was to find out whether more stations should be added and where to do so. However, in this case, and given that the locations seem to contain null values, it is safer to drop these columns. The column \textit{ride\_id} also does not provide any valuable information for the current analysis. Therefore, the relevant columns needed from this point onwards are the: \textit{rideable\_type}, \textit{started\_at}, \textit{ended\_at}, \textit{member\_casual}. So the first task performed by the method \textit{clean\_data} is to drop the columns that are no longer needed. Next, is data formatting. A quick check shows that the columns \textit{started\_at} and \textit{ended\_at} are stored as a strings of characters. Therefore, the second thing done by the method \textit{clean\_data} is to convert these columns into a datetime format and store the new dataset as \textit{cleaned\_data}. In order to ensure that the new dataset has the correct shape, the method \textit{count\_entries} is called once again and used to compare the cleaned dataset to the original one. The result is shown in Figure \ref{fig5}.
 	
 	\begin{figure}[h]
 	\centering
@@ -89,14 +104,24 @@ On the left is the result of running the method without removing duplicates, and
 	\hspace{0.5 in}
 		\includegraphics[scale=0.5]{img4.png}
 	\end{subfigure}
+	\caption{No of entries and columns before and after dropping the null values}
+	\label{fig5}
 	\end{figure}
-	As expected only the number of columns has changed (from 13 to 5), and the number of entries remains the same as the original. One final check, we apply the \textit{check\_NAN} method to the cleaned data, the result is as expected and shown is below:
+	
+	As expected only the number of columns has changed (from 13 to 4), and the number of entries remains the same. As a final check, the method \textit{check\_NAN} is applied to the cleaned data, the result is as expected and is shown in Figure \ref{fig6}:
 	
 	\begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.4]{imgNAN2.png}
+	\caption{Percentage of null values after cleaning}
+	\label{fig6}
 	\end{figure}
-		
+	
+	\item \textit{prepare\_data}:\\
+	Now that the data is clean and in the correct format, we can extract the required information for analysis. First, the method \textit{prepare\_data} adds a new column \textit{ride\_length} which is the difference between the columns \textit{ended\_at} and \textit{started\_at}. Second, 
 \end{itemize} 
+
+\section*{Analysis:}
+
 
 \end{document}
