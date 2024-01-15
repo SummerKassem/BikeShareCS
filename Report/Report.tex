@@ -25,7 +25,7 @@
 
 This report provides the results and step-by-step explanation of the data analysis performed for a bike-sharing case study. The data belongs to a bike-sharing company that has two kinds of users: annual members and casual riders. The goal of the study was to identify how annual members and casual riders use the bikes differently in order to help the stake-holders decide whether or not to target converting casual riders into annual members in the next marketing campaign. Python was used to perform the analysis using data collected from January-November 2023 and downloaded from \url{https://divvy-tripdata.s3.amazonaws.com/index.html}.
 
-\section*{Dataset exploration \& cleaning:}
+\section*{Cleaning:}
 The code that was used to perform the data exploration can be found in the Jupyter Notebook \href{https://github.com/SummerKassem/BikeShareCS/blob/main/Code/cleaning.ipynb}{cleaning.ipynb}. The main functions are explained below:
 \begin{itemize}
 	\item \textit{read\_data}:\\
@@ -48,7 +48,7 @@ The code that was used to perform the data exploration can be found in the Jupyt
 	\label{fig2}
 	\end{figure}
 	
-	As is expected, the columns \textit{rideable\_type} and \textit{member\_casual} have a small number of unique values, whereas the rest of the columns do not. The unique values in these two columns are:  
+	The columns \textit{rideable\_type} and \textit{member\_casual} have a small number of unique values, whereas the rest of the columns do not. The unique values in these two columns are:  
 	
 	\begin{itemize}
 	\item \textit{rideable\_type}: [electric\_bike, classic\_bike, docked\_bike]
@@ -56,7 +56,7 @@ The code that was used to perform the data exploration can be found in the Jupyt
 	\end{itemize}
 	
 	\item \textit{count\_entries}:\\
-	After the csv files are read into the dataframes, the method \textit{count\_entries} is used to collect further information about the dataset. It finds the number of entries per file as well as the number of columns. This is done in order to check that the data format is consistent across the different files. Next, the method calculates the total number of bike rides in the entire dataset. There is an option within the method to remove duplicates. Therefore, the method is first called with the remove duplicates option deactivated, in order to get a preliminary feel of the dataset. And then the method is called again with the remove duplicates option activated. The results are then written to output files which are shown in Figure \ref{fig3}. 
+	After the csv files are read into the dataframes, the method \textit{count\_entries} is used to collect further information about the dataset. It finds the number of entries per file as well as the number of columns. This is done in order to check that the data format is consistent across the different files. Next, the method calculates the total number of bike rides in the entire dataset. There is an option within the method to remove duplicates. Therefore, the method is first called with the remove duplicates option deactivated, in order to get a preliminary feel of the dataset. And then the method is called again with the remove duplicates option activated. The results are shown in Figure \ref{fig3}. 
 	
 	\begin{figure}[h]
 	\centering
@@ -73,7 +73,7 @@ The code that was used to perform the data exploration can be found in the Jupyt
 	\end{figure}
 	\pagebreak
 	
-On the left is the result of running the method without removing duplicates, and on the right is the result after removing duplicates. We can see that all the files have the same number of columns, which is a good preliminary indicator of the consistency of data across the months. In total the dataset contains almost 5.5 Million entries, with an average of approximately 500,000 entries per month. From January to March the number of rides is relatively lower than the average, which is expected as these are cold months. This is confirmed by the peak in the number of rides during the Summer months June to August. The number of entries before and after removing duplicates is identical, therefore the original dataset did not have any duplicates. \\
+The table in Figure \ref{fig3} on the left is the result of running the method without removing duplicates, and the table on the right is the result after removing duplicates. We can see that all the files have the same number of columns, which is a good preliminary indicator of the consistency of data across the months. In total the dataset contains almost 5.5 Million entries, with an average of approximately 500,000 entries per month. From January to March the number of rides is relatively lower than the average, which is expected as these are cold months. This is confirmed by the peak in the number of rides during the Summer months June to August. The number of entries before and after removing duplicates is identical, therefore the original dataset did not have any duplicates. \\
 
 	\item \textit{check\_NAN}:\\
 	Given that a brief look at the entries from May already showed a couple of NaN values (Figure \ref{fig1} \textit{end\_station\_name}, and \textit{end\_station\_id}), the method \textit{check\_NAN} calculates the percentage of NaN values for each column and month. The results are shown in Figure \ref{fig4}. As we can see the columns \textit{start\_station\_name}, \textit{start\_station\_id}, \textit{end\_station\_name}, \textit{end\_station\_id} in every month have 13-17\% null values. The columns \textit{end\_lat} and \textit{end\_long} have less than 1\% null values. 
@@ -92,19 +92,19 @@ On the left is the result of running the method without removing duplicates, and
 	\item bike (electric/classic/docked)
 	\item ride (length, date, location)
 	\end{enumerate}
-Since, the goal of the analysis is to find out how casual riders differ from members, it seems that the all information is relevant to the analysis, with the exception of the ride location. This geographical location would have been important if for example the goal of the analysis was to find out whether more stations should be added and where to do so. Therefore, since the locations seem to be irrelevant and contain null values, it is safer to drop these columns rather than drop the entries that contain null values. The column \textit{ride\_id} also does not provide any valuable information for the current analysis. Thus, the relevant columns needed from this point onwards are the: \textit{rideable\_type}, \textit{started\_at}, \textit{ended\_at}, \textit{member\_casual}. So the first task performed by the method \textit{clean\_data} is to drop the columns that are no longer needed. 
+Since, the goal of the analysis is to find out whether to target converting casual riders into members or not, it seems that all the information is relevant to the analysis, with the exception of the ride location. The geographical location would have been important if for example the goal of the analysis was to find out whether more stations should be added and where to do so. Therefore, since the locations seem to be irrelevant and contain null values, it is safer to drop these columns rather than drop the entries that contain null values. The column \textit{ride\_id} also does not provide any valuable information for the current analysis. Thus, the relevant columns needed from this point onwards are the: \textit{rideable\_type}, \textit{started\_at}, \textit{ended\_at}, \textit{member\_casual}. So the first task performed by the method \textit{clean\_data} is to drop the columns that are no longer needed. 
 
 
-Next, is data formatting. We have already looked at the columns \textit{rideable\_type} and \textit{member\_casual}, and saw that they have the expected values. As for the columns \textit{started\_at} and \textit{ended\_at}, a quick check shows that these columns are stored as strings of characters. So first, they are converted into a datetime format. Second, we need to check whether the \textit{ended\_at} time always comes after \textit{started\_at} time. By adding a column \textit{started\_before\_ended} which is True if the ride time ended before it started, and False otherwise. We can then filter using this column to see when it is True. The result for the month of May is shown in Figure \ref{fig8}.
+Next, is data formatting. We have already looked at the columns \textit{rideable\_type} and \textit{member\_casual}, and saw that they have the expected values. As for the columns \textit{started\_at} and \textit{ended\_at}, a quick check shows that these columns are stored as strings of characters. So first, they are converted into a datetime format. Second, we need to check whether the \textit{ended\_at} time always comes after \textit{started\_at} time. This is done by adding a column called \textit{started\_before\_ended} which is True if the ride time ended before it started, and False otherwise. The data is then filtered using this column to see when it is True. The result for the month of May is shown in Figure \ref{fig8}.
 
 	\begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.6]{imgNEG.png}
+	\includegraphics[scale=0.56]{imgNEG.png}
 	\caption{Entries in May when the ended\_at time is before the started\_at time}
 	\label{fig8}
 	\end{figure}
 
-Looking at the entries in Figure \ref{fig8}, we can see that indeed there are cases when the \textit{ended\_at} time is before the \textit{started\_at} time. It can be that in these incidents the start and end time were switched due to some glitch, perhaps the bike rental time being only a few seconds (shorter than the server response time). In the entire dataset of approximately 5.5 Million entries, there is a total of 262 entries that have this issue. Since, the dataset is large, we can simply drop these entries.
+Looking at the entries in Figure \ref{fig8}, we can see that indeed these are cases when the \textit{ended\_at} time is before the \textit{started\_at} time by a few seconds. It can be that in these incidents the start and end time were switched due to some glitch, perhaps the bike rental time being only a few seconds (shorter than the server response time). In the entire dataset of approximately 5.5 Million entries, there is a total of 262 entries that have this issue. Since, the dataset is large, we can simply drop these entries.
 
 
 Finally, after dropping the columns related to location, and the entries with the switched times, the new dataset is stored as \textit{cleaned\_data}. In order to ensure that the new dataset has the correct shape, the method \textit{count\_entries} is called once again and used to compare the cleaned dataset to the original one. The result is shown in Figure \ref{fig5}.
@@ -119,32 +119,38 @@ Finally, after dropping the columns related to location, and the entries with th
 	\hspace{0.5 in}
 		\includegraphics[scale=0.5]{img4.png}
 	\end{subfigure}
-	\caption{No of entries and columns before and after dropping the null values}
+	\caption{No of entries and columns before and after cleaning}
 	\label{fig5}
 	\end{figure}
 	
-	As we can see only the number of columns has changed (from 13 to 4), and the number of entries remains the same. As a final check, the method \textit{check\_NAN} is applied to the cleaned data, the result is as expected and is shown in Figure \ref{fig6}:
+	As we can see in Figure \ref{fig5} the number of columns has changed from 13 to 4, and the number of entries is slightly less due to removing the entries where the \textit{ended\_at} time is before the \textit{started\_at} time. 
 	
-	\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.4]{imgNAN2.png}
-	\caption{Percentage of null values after cleaning}
-	\label{fig6}
-	\end{figure}
-	
-	\item \textit{prepare\_data}:\\
-	Now that the data is clean and in the correct format, we can extract the required information for analysis. The method \textit{prepare\_data} adds two new columns: 1. \textit{ride\_length}: the difference between the columns \textit{ended\_at} and \textit{started\_at}, 2. \textit{day\_of\_week}: extracted from the date in \textit{started\_at}. Figure \ref{fig7} shows the first and last 5 entries of the data[``May"] after cleaning and preparation.
+	\end{itemize}
+
+\pagebreak
+
+\section*{Preparation:}
+\begin{itemize}
+\item \textit{prepare\_data}:\\
+	The method \textit{prepare\_data} adds two new columns: \textit{ride\_length}: the difference between the columns \textit{ended\_at} and \textit{started\_at} times, and \textit{day\_of\_week}: extracted from the date in \textit{started\_at}. Figure \ref{fig7} shows the first and last 5 entries of the data[``May"] after cleaning and preparation.
 
 	\begin{figure}[h]
 	\hspace{1cm}
 	\includegraphics[width=5.8 in, height = 1.8 in]{imgMay2.png}
 	\caption{First and last 5 entries of bike rides from May after cleaning and preparation}
-	\label{fig6}
+	\label{fig7}
 	\end{figure}
 	
-	\end{itemize}
-
-\section*{Analysis:}
-
+\item \textit{statistics}:\\	
+	The method \textit{statistics} calculates for each month the average and maximum ride length, as well as the mode of the day of the week; i.e. the day of the week that occurred the most. The results are shown in Figure \ref{fig9}. The mean ride length varies between 13 - 22 minutes across the months, whereas the maximum ride length
+	
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=4 in, height = 3 in]{imgMeanMax.png}
+	\caption{The mean and max of the ride length, and the mode of the day of the week}
+	\label{fig9}
+	\end{figure}
+	
+\end{itemize}
 
 \end{document}
