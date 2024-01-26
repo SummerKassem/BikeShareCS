@@ -29,12 +29,12 @@ This report provides the results and step-by-step explanation of the data analys
 The code that was used to perform the data exploration can be found in the Jupyter Notebook \href{https://github.com/SummerKassem/BikeShareCS/blob/main/Code/cleaning.ipynb}{cleaning.ipynb}. The main functions are explained below:
 \begin{itemize}
 	\item \textit{read\_data}:\\
-	Here the .csv file for the bike rides of each month are read and stored into a dictionary called “data”. Each element in the dictionary has a key (the name of the month) and a value (the panada dataframe that holds the data entries). This simplifies the access of the entries for each corresponding month, by using the month as the key (e.g. data[“May”] retrieves the dataframe that holds the entries from May), while maintaining the segregation between months (data from different months are not fused together). In Figure \ref{fig1} we can see the first and last 5 entries of bike rides from May:
+	Here the .csv file for the bike rides of each month are read and stored into a dictionary. Each element in the dictionary has a key (the name of the month) and a value (the Panada data-frame that holds the data entries). This simplifies the access of the entries for each corresponding month, by using the month as the key (e.g. original\_data[“May”] retrieves the data-frame that holds the entries from May), while maintaining the segregation between months (data from different months are not fused together). In Figure \ref{fig1} we can see the first and last 5 entries of bike rides from May:
 
 	\begin{figure}[h]
 	\hspace{-1.8cm}
 	\includegraphics[width=8 in, height = 2 in]{imgMay.png}
-	\caption{First and last 5 entries of bike rides from May (data[``May"])}
+	\caption{First and last 5 entries of bike rides from May (original\_data[``May"])}
 	\label{fig1}
 	\end{figure}
 	\pagebreak
@@ -42,7 +42,7 @@ The code that was used to perform the data exploration can be found in the Jupyt
 	From the entries we can see that the data consists of 13 columns: 1) ride id, 2) type of bike, 3-4) date and time for the start and end of the ride, 5-12) the name, id, latitude and longitude of the start and end stations, and 13) whether the rider was a casual rider or a member. 
 	
 	\item \textit{count\_entries}:\\
-	After the csv files are read into the dataframes, the method \textit{count\_entries} is used to collect further information about the dataset. It finds the number of entries per file as well as the number of columns. This is done in order to check that the data format is consistent across the different files. Next, the method calculates the total number of bike rides in the entire dataset. There is an option within the method to remove duplicates. Therefore, the method is first called with the remove duplicates option deactivated, in order to collect preliminary information about the dataset. And then the method is called again with the remove duplicates option activated. The results are shown in Figure \ref{fig3}. 
+	After the csv files are read into the data-frames, the method \textit{count\_entries} is used to collect further information about the dataset. It finds the number of entries per file as well as the number of columns. This is done in order to check that the data format is consistent across the different files. Next, the method calculates the total number of bike rides in the entire dataset. There is an option within the method to remove duplicates. Therefore, the method is first called with the remove duplicates option deactivated, in order to collect preliminary information about the dataset. And then the method is called again with the remove duplicates option activated. The results are shown in Figure \ref{fig3}. 
 	
 	\begin{figure}[h]
 	\centering
@@ -70,11 +70,11 @@ The table in Figure \ref{fig3} on the left is the result of running the method w
 	\label{fig4}
 	\end{figure}
 	
-In order to explore the dataset a bit further, the number of unique (distinct) values for each column in data[``May"] is calculated and shown in Figure \ref{fig2}. 
+In order to explore the dataset a bit further, the number of unique (distinct) values for each column in original\_data[``May"] is calculated and shown in Figure \ref{fig2}. 
 	\begin{figure}[h]
 	\centering
 	\includegraphics[scale = 0.6]{imgUnique.png} %[width=8 in, height = 2 in]
-	\caption{No. of unique values for every column in data[``May"]}
+	\caption{No. of unique values for every column in original\_data[``May"]}
 	\label{fig2}
 	\end{figure}
 	
@@ -86,7 +86,7 @@ In order to explore the dataset a bit further, the number of unique (distinct) v
 	\begin{figure}[h]
 	\hspace{-1.8cm}
 	\includegraphics[width=8 in, height = 1 in]{imgDups1.png}
-	\caption{Entries from data[``May"] that have the exact same \textit{started\_at}}
+	\caption{Entries from original\_data[``May"] that have the exact same \textit{started\_at}}
 	\label{fig10}
 	\end{figure}
 	
@@ -100,7 +100,7 @@ In order to explore the dataset a bit further, the number of unique (distinct) v
 	\begin{enumerate} 
 	\item rider (casual/member)
 	\item bike (electric/classic/docked)
-	\item ride (length, date, location)
+	\item ride (start-end: time, date, location)
 	\end{enumerate}
 Since, the goal of the analysis is to find out whether to target converting casual riders into members or not, it seems that all the information is relevant to the analysis, with the exception of the ride location. The geographical location would have been important if for example the goal of the analysis was to find out whether more stations should be added and where to do so. Therefore, since the locations seem to be irrelevant, contain null values and discrepancies, these columns will be dropped. The column \textit{ride\_id} also does not provide any valuable information for the current analysis. Thus, the first task performed by the method \textit{clean\_data} is to drop all columns related to geographical location and ride id, which leaves: \textit{rideable\_type}, \textit{started\_at}, \textit{ended\_at}, \textit{member\_casual}. 
 
@@ -117,7 +117,7 @@ Next, is data formatting. We have already looked at the columns \textit{rideable
 Looking at the entries in Figure \ref{fig8}, we can see that these are cases when the \textit{ended\_at} time is before the \textit{started\_at} time by just a few seconds. It can be that in these incidents the start and end time were switched due to some glitch, perhaps the bike rental time being only a few seconds (shorter than the server response time). In the entire dataset of approximately 5.5 Million entries, there is a total of 262 entries that have this issue. Since, the dataset is large, we can simply drop these entries.
 
 
-Finally, after dropping the columns related to location, and the entries with the switched times, the new dataset is stored as \textit{cleaned\_data}. In order to ensure that the new dataset has the correct shape, the method \textit{count\_entries} is called once again and used to compare the cleaned dataset to the original one. The result is shown in Figure \ref{fig5}. As we can see the number of columns has changed from 13 to 4, and the number of entries is slightly less due to removing the entries where the \textit{ended\_at} time is before the \textit{started\_at} time. 
+Finally, after dropping the columns related to location, and the entries with the switched times, the method \textit{count\_entries} is called once again and used to compare the cleaned dataset to the original one. The result is shown in Figure \ref{fig5}. As we can see the number of columns has changed from 13 to 4, and the number of entries is slightly less due to removing the entries where the \textit{ended\_at} time is before the \textit{started\_at} time. 
 	
 	\begin{figure}[h]
 	\centering
@@ -136,22 +136,12 @@ Finally, after dropping the columns related to location, and the entries with th
 	\end{itemize}
 
 \pagebreak
-
-\section*{Preparation:}
-\begin{itemize}
-\item \textit{prepare\_data}:\\
-	The method \textit{prepare\_data} adds two new columns: \textit{ride\_length}: the difference between the columns \textit{ended\_at} and \textit{started\_at} times, and \textit{day\_of\_week}: extracted from the date in \textit{started\_at}. Figure \ref{fig7} shows the first and last 5 entries of the data[``May"] after cleaning and preparation.
-
-	\begin{figure}[h]
-	\hspace{1cm}
-	\includegraphics[width=5.8 in, height = 1.9 in]{imgMay2.png}
-	\caption{First and last 5 entries of bike rides from May after cleaning and preparation}
-	\label{fig7}
-	\end{figure}
-\end{itemize}
 	
 \section*{Analysis:}
 \begin{itemize}
+\item \textit{prepare\_data}:\\
+	The method \textit{prepare\_data} adds two new columns: \textit{ride\_length}: the difference between the columns \textit{ended\_at} and \textit{started\_at} times, and \textit{day\_of\_week}: extracted from the date in \textit{started\_at}. 
+	
 \item \textit{statistics}:\\	
 	The method \textit{statistics} calculates for each month the average and maximum ride length, as well as the mode of the day of the week; i.e. the day of the week that occurred the most. The results are shown in Figure \ref{fig9}. The mean ride length varies between 13 - 22 minutes across the months, whereas the maximum ride length is 68 days. 
 	
@@ -164,7 +154,7 @@ Finally, after dropping the columns related to location, and the entries with th
 	
 	\begin{figure}[h]
 	\centering
-	\includegraphics[width=4 in, height = 3.2 in]{imgMeanMax2.png}
+	%\includegraphics[width=4 in, height = 3.2 in]{imgMeanMax2.png}
 	\caption{The mean and max ride length, and mode of day of the week for members and casual riders separately}
 	\label{fig10}
 	\end{figure}
