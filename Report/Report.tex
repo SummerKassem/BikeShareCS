@@ -44,7 +44,7 @@ The code that was used to perform the data analysis can be found in the Jupyter 
 	\end{figure}
 	\pagebreak
 	
-	In Figure \ref{fig1} the multi-index of the DF is shown in the first two columns (month, row\_index). Then looking at the entries themselves we can see that the data consists of 13 columns: 1) ride id, 2) type of bike, 3-4) date and time for the start and end of the ride, 5-12) the name, id, latitude and longitude of the start and end stations, and 13) whether the rider was a casual rider or a member. 
+	In Figure \ref{fig1} the multi-index of the DF is shown in the first two columns (month, row\_id). Then looking at the entries themselves we can see that the data consists of 13 columns: 1) ride id, 2) type of bike, 3-4) date and time for the start and end of the ride, 5-12) the name, id, latitude and longitude of the start and end stations, and 13) whether the rider was a casual rider or a member. 
 	
 	\item \textit{count\_entries}:\\
 	The method \textit{count\_entries} is used to find the number of entries within each month, and the average per month. The result is shown in Figure \ref{fig3} left. The dataset contains in total almost 5.7 Million entries, with an average of approximately 480,000 entries per month. From Decemeber to March the number of rides is relatively lower than the average, which is expected as these are cold months. This is confirmed by the peak highlighted in August. After retrieving this information for the original dataset, the duplicates are dropped, and the method is called again. The result of running the method after dropping the duplicates is shown in Figure \ref{fig3} right. The number of entries before and after is identical, therefore the original dataset did not have any duplicates.\\ 
@@ -108,33 +108,16 @@ The code that was used to perform the data analysis can be found in the Jupyter 
 Since, the goal of the analysis is to find out whether to target converting casual riders into members or not, it seems that all the information is relevant to the analysis, with the exception of the ride location. The geographical location would have been important if for example the goal of the analysis was to find out whether more stations should be added and where to do so. Therefore, since the locations seem to be irrelevant, contain null values and discrepancies, these columns will be dropped. The column \textit{ride\_id} also does not provide any valuable information for the current analysis. Thus, the method \textit{clean\_data1} drops all columns related to geographical location and ride id, which leaves: \textit{rideable\_type}, \textit{started\_at}, \textit{ended\_at}, \textit{member\_casual}. 
 
 
-Next, is data formatting. We have already looked at the columns \textit{rideable\_type} and \textit{member\_casual}, and ensured that they have the expected values. As for the columns \textit{started\_at} and \textit{ended\_at}, we need to make sure that the \textit{ended\_at} time always comes after \textit{started\_at} time. In order to compare the values, they are first converted in the method \textit{clean\_data1} from strings of characters to a numerical datetime format. Next, by comparing the values and filtering them, we find that there are indeed cases where the \textit{ended\_at} time is actually before the \textit{started\_at} time. These cases for the month of May are shown in Figure \ref{fig8}.
+Next, is data formatting. We have already looked at the columns \textit{rideable\_type} and \textit{member\_casual}, and ensured that they have the expected values. As for the columns \textit{started\_at} and \textit{ended\_at}, we need to make sure that the \textit{ended\_at} time always comes after \textit{started\_at} time. In order to compare the values, they are first converted in the method \textit{clean\_data1} from strings of characters to a numerical datetime format. Next, by comparing the values and filtering out the cases where the \textit{ended\_at} time is actually before the \textit{started\_at} time, we can see the results in Figure \ref{fig8}.
 
 	\begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.56]{imgNEG.png}
-	\caption{Entries in May when the ended\_at time is before the started\_at time}
+	\caption{Entries where the ended\_at time is before the started\_at time}
 	\label{fig8}
 	\end{figure}
 
-Looking at the entries in Figure \ref{fig8}, we can see that these are cases when the \textit{ended\_at} time is before the \textit{started\_at} time by just a few seconds. It can be that in these incidents the start and end time were switched due to some glitch, perhaps the bike rental time being only a few seconds (shorter than the server response time). In the entire dataset of approximately 5.5 Million entries, there is a total of 262 entries that have this issue. Since, the dataset is large, we can simply drop these entries.
-
-
-Finally, after dropping the columns related to location, and the entries with the switched times, the method \textit{count\_entries} is called once again and used to compare the cleaned dataset to the original one. The result is shown in Figure \ref{fig5}. As we can see the number of columns has changed from 13 to 4, and the number of entries is slightly less due to removing the entries where the \textit{ended\_at} time is before the \textit{started\_at} time. 
-	
-	\begin{figure}[h]
-	\centering
-	\begin{subfigure}{.4\textwidth}
-	\hspace{0.5 in}
-		\includegraphics[scale=0.5]{img2.png}
-	\end{subfigure}
-	\begin{subfigure}{.4\textwidth}
-	\hspace{0.5 in}
-		\includegraphics[scale=0.5]{img4.png}
-	\end{subfigure}
-	\caption{No of entries and columns before and after cleaning}
-	\label{fig5}
-	\end{figure}
+Looking at the entries in Figure \ref{fig8}, we can see that these are cases when the \textit{ended\_at} time is before the \textit{started\_at} time by just a few seconds. It can be that in these incidents the start and end time were switched due to some glitch, perhaps the bike rental time being only a few seconds (shorter than the server response time). In the entire dataset of approximately 5.5 Million entries, there is a total of 272 entries that have this issue. Since, the dataset is large, we can simply drop these entries.
 	
 	\end{itemize}
 

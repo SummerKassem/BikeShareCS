@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  29 JAN 2024 14:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  30 JAN 2024 14:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -370,11 +370,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
  []
 
-<images//img1.png, id=7, 1356.06625pt x 374.39874pt>
+<images//img1.png, id=7, 1349.04pt x 391.4625pt>
 File: images//img1.png Graphic file (type png)
 <use images//img1.png>
 Package pdftex.def Info: images//img1.png  used on input line 41.
-(pdftex.def)             Requested size: 520.33865pt x 238.49466pt.
+(pdftex.def)             Requested size: 520.3392pt x 238.4931pt.
 [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
@@ -394,11 +394,11 @@ File: images//img3.png Graphic file (type png)
 <use images//img3.png>
 Package pdftex.def Info: images//img3.png  used on input line 60.
 (pdftex.def)             Requested size: 160.80197pt x 199.94853pt.
-<images//imgNAN.png, id=29, 1264.725pt x 298.11375pt>
+<images//imgNAN.png, id=29, 1261.71375pt x 316.18124pt>
 File: images//imgNAN.png Graphic file (type png)
 <use images//imgNAN.png>
 Package pdftex.def Info: images//imgNAN.png  used on input line 71.
-(pdftex.def)             Requested size: 520.35463pt x 180.67552pt.
+(pdftex.def)             Requested size: 520.34784pt x 180.67868pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -410,35 +410,26 @@ Package pdftex.def Info: images//imgUni.png  used on input line 78.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images//imgDups1.png, id=32, 1331.97626pt x 98.3675pt>
+<images//imgDups1.png, id=32, 1324.95pt x 118.4425pt>
 File: images//imgDups1.png Graphic file (type png)
 <use images//imgDups1.png>
 Package pdftex.def Info: images//imgDups1.png  used on input line 91.
-(pdftex.def)             Requested size: 520.34259pt x 72.26994pt.
+(pdftex.def)             Requested size: 520.34729pt x 72.2715pt.
 [2 <./images//img2.png> <./images//img3.png>] [3 <./images//imgNAN.png> <./imag
 es//imgUni.png> <./images//imgDups1.png>]
-<images//imgNEG.png, id=53, 637.38126pt x 293.095pt>
+<images//imgNEG.png, id=53, 642.4pt x 323.2075pt>
 File: images//imgNEG.png Graphic file (type png)
 <use images//imgNEG.png>
 Package pdftex.def Info: images//imgNEG.png  used on input line 115.
-(pdftex.def)             Requested size: 356.93106pt x 164.13206pt.
- [4 <./images//imgNEG.png>]
-File: images//img2.png Graphic file (type png)
-<use images//img2.png>
-Package pdftex.def Info: images//img2.png  used on input line 129.
-(pdftex.def)             Requested size: 107.40099pt x 167.12396pt.
-<images//img4.png, id=66, 265.99374pt x 391.4625pt>
-File: images//img4.png Graphic file (type png)
-<use images//img4.png>
-Package pdftex.def Info: images//img4.png  used on input line 133.
-(pdftex.def)             Requested size: 132.99654pt x 195.73076pt.
- [5 <./images//img4.png>]
-<images//imgMeanMax1.png, id=74, 517.935pt x 395.4775pt>
+(pdftex.def)             Requested size: 359.74155pt x 180.99496pt.
+ [4 <./images//imgNEG.png>] [5]
+<images//imgMeanMax1.png, id=70, 517.935pt x 395.4775pt>
 File: images//imgMeanMax1.png Graphic file (type png)
 <use images//imgMeanMax1.png>
-Package pdftex.def Info: images//imgMeanMax1.png  used on input line 153.
+Package pdftex.def Info: images//imgMeanMax1.png  used on input line 136.
 (pdftex.def)             Requested size: 289.09325pt x 231.2659pt.
- [6 <./images//imgMeanMax1.png>] (./Report.aux)
+
+[6 <./images//imgMeanMax1.png>] (./Report.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -446,10 +437,10 @@ Package rerunfilecheck Info: File `Report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10654 strings out of 476025
- 173792 string characters out of 5790018
+ 10643 strings out of 476025
+ 173606 string characters out of 5790018
  1861388 words of memory out of 5000000
- 30976 multiletter control sequences out of 15000+600000
+ 30967 multiletter control sequences out of 15000+600000
  517832 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,9n,77p,945b,661s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -460,10 +451,10 @@ sr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr
 /local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
 local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/l
 ocal/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Report.pdf (6 pages, 896742 bytes).
+Output written on Report.pdf (6 pages, 807452 bytes).
 PDF statistics:
- 119 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
- 21 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 115 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
+ 20 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
