@@ -95,7 +95,7 @@ The code that was used to perform the data analysis can be found in the Jupyter 
 	
 	\item \textit{start(end)\_station\_name(id)\_unique} = 1287, 1250, 1254, 1210: since there is a limited number of stations, it is expected that these columns have a smaller number of unique values than the number of entries. However, one would have expected the number of unique station names and station ids to be the same, whereas the ids are less than the names by a small fraction. Which could either by accounted for by the null values or could mean that there are stations that have the different names but the same id.
 	\item \textit{start(end)\_lat(long)\_unique} = 188591, 185419, 4759, 4762: the start latitude and longitude numbers seem to be as expected, which is less than the total number of entries, but more than the number of stations (this is based on the assumption that the exact location where a bike is docked can vary within the station especially that the values are given to the $6^{th}$ decimal place). However, there is a large difference between the number of values in the start ($\sim$188000) and the numbers in the end ($\sim$4800) latitude and longitude. This difference cannot be accounted for by the null values in the end columns, since these were less than 1\%. If these values are true, that would mean that users rode there bikes from many start points, but ended up in a much smaller set of points. Which cannot be the case since that would have been reflected in the number of end stations. 
-	\item \textit{member\_casual\_unique} = 2: these 2 unique values are: [member, casual].
+	\item \textit{member\_casual\_unique} = 2: the 2 unique types of riders are: [member, casual].
 \end{itemize}
 	
 	\item \textit{clean\_data}:\\
@@ -128,12 +128,12 @@ Looking at the entries in Figure \ref{fig8}, we can see that these are cases whe
 \item \textit{prepare\_data}:\\
 	The method \textit{prepare\_data} adds two new columns: \textit{ride\_length}: the difference between the columns \textit{ended\_at} and \textit{started\_at} times, and \textit{day\_of\_week}: extracted from the date in \textit{started\_at}. 
 	
-\item \textit{statistics}:\\	
-	The method \textit{statistics} calculates for each month the average and maximum ride length, as well as the mode of the day of the week; i.e. the day of the week that occurred the most. The results are shown in Figure \ref{fig9}. The mean ride length varies between 13 - 22 minutes across the months, whereas the maximum ride length is 68 days. 
+\item \textit{mean\_max\_mode}:\\	
+	This method calculates for each month the mean and maximum ride length, as well as the mode of the day of the week; i.e. the day of the week that occurred the most. The method also performs these operations across the entire a year to give an overall view of the data. The results are shown in Figure \ref{fig9}. The mean ride length varies between 13 - 22 minutes across the months, whereas the maximum ride length is 68 days. 
 	
 	\begin{figure}[h]
 	\centering
-	\includegraphics[width=4 in, height = 3.2 in]{imgMeanMax1.png}
+	\includegraphics[scale=0.7]{imgMeanMax1.png} %[width=4 in, height = 3.2 in]
 	\caption{The mean and max ride length, and mode of day of the week}
 	\label{fig9}
 	\end{figure}
