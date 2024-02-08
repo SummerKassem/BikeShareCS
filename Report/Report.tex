@@ -23,7 +23,7 @@
 \date{}
 \maketitle
 
-This report provides the results and step-by-step explanation of the data analysis performed for a bike-sharing case study. The data belongs to a bike-sharing company that has two kinds of users: annual members and casual riders. The goal of the study was to identify how annual members and casual riders use the bikes differently in order to help the stake-holders decide whether or not to target converting casual riders into annual members in the next marketing campaign. The library Panadas from Python was used to perform the analysis using data collected from January-December 2023 and downloaded from \url{https://divvy-tripdata.s3.amazonaws.com/index.html}. \\
+This report provides the results and step-by-step explanation of the data analysis performed for a bike-sharing case study. The data belongs to a bike-sharing company that has two kinds of users: annual members and casual riders. The goal of the study was to identify how annual members and casual riders use the bikes differently in order to help the stake-holders decide whether or not to target converting casual riders into annual members in the next marketing campaign. The library Pandas from Python was used to perform the analysis using data collected from January-December 2023 and downloaded from \url{https://divvy-tripdata.s3.amazonaws.com/index.html}. \\
 
 The code that was used to perform the data analysis can be found in the Jupyter Notebook 
 
@@ -128,7 +128,7 @@ Looking at the entries in Figure \ref{fig8}, we can see that these are cases whe
 \section*{Analysis:}
 \begin{itemize}
 \item \textit{prepare\_data}:\\
-	The method \textit{prepare\_data} adds two new columns: \textit{ride\_length}: the difference between the columns \textit{ended\_at} and \textit{started\_at} times, and \textit{day\_of\_week}: extracted from the date in \textit{started\_at}. 
+	The method \textit{prepare\_data} adds two new columns: \textit{ride\_length}: the difference between the columns \textit{ended\_at} and \textit{started\_at} times, and \textit{day\_of\_week}: extracted from the date in \textit{started\_at}. Then the columns \textit{started\_at} and \textit{ended\_at} can be dropped, since they are now redundant.
 	
 \item \textit{mean\_max\_mode}:\\	
 	This method groups the data first by month and then calculates the mean and maximum ride length, as well as the mode of the day of the week; i.e. the day of the week that occurred the most. The method also performs these operations across all the months to give an overall year view of the data. The results are shown in Figure \ref{fig9}. The mean ride length varies between 13 - 22 minutes across the months, whereas the maximum ride length is 68 days. 
@@ -140,21 +140,32 @@ Looking at the entries in Figure \ref{fig8}, we can see that these are cases whe
 	\label{fig9}
 	\end{figure}
 	
-	In order to understand how the data shown Figure \ref{fig9} differs between members and casual riders, a pivot table is used to show the mean and maximum value by rider type. The table is shown in Figure \ref{fig11} left. A quick look at the table shows that the casual riders have longer rides when compared to members. To see this more clearly the mean ride length is plotted by rider type in Figure \ref{fig11} right.
+	In order to understand how the data shown Figure \ref{fig9} differs between members and casual riders, a pivot table is used to show the maximum and mean value per month by rider type. The table is shown in Figure \ref{fig11}. A quick look shows that the casual riders have longer mean and maximum ride lengths when compared to members. To see this more clearly the mean and maximum ride length are plotted in Figure \ref{fig12}. From the plots we can see that casual riders consistently have longer rides than members across the entire year. And from the maximum ride length plot we can see that members never have a ride that exceeds one day, whereas casual riders have ride lengths that can go up to 68 days. By making a box plot which shows the middle 50\% of the data inside the box, and then the median,  
 	
 	
 	\begin{figure}[h]
 	\centering
-	\begin{subfigure}{.4\textwidth}
-	\hspace{-0.8 in}
-		\includegraphics[scale=0.5]{imgMeanMax2.png} 
-	\end{subfigure}
-	\begin{subfigure}{.4\textwidth}
-	\hspace{0.3 in}
-		\includegraphics[scale=0.5]{mean_cvsm1.png}
-	\end{subfigure}
-	\caption{Left: The mean and max ride length divided by rider type}
+	\includegraphics[scale=0.62]{imgMeanMax2.png} 
+	\caption{Table of mean and max ride length divided by rider type}
 	\label{fig11}
+	\end{figure}
+	
+	\begin{figure}[h]
+	\begin{subfigure}{.45\textwidth}
+		\includegraphics[scale=0.5]{mean_cvsm1.pdf} 
+	\end{subfigure}
+	\begin{subfigure}{.4\textwidth}
+		\includegraphics[scale=0.5]{max_cvsm1.pdf}
+	\end{subfigure}
+	\caption{Plots of mean and max ride length divided by rider type}
+	\label{fig12}
+	\end{figure}
+	
+	\begin{figure}[h]
+	\hspace{-1in}
+	\includegraphics[scale=0.7]{boxplot_distribution.pdf} 
+	\caption{}
+	\label{fig13}
 	\end{figure}
 	
 \end{itemize}
