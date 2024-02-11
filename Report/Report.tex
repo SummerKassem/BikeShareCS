@@ -37,8 +37,8 @@ The library Pandas from Python was used to perform the analysis, and Matplotlib 
 	The original data was stored such that each month was in a separate .csv file. So in this method the data from each month is read and stored into a DataFrame (DF), and then the 12 DFs are concatenated into one multi-index DF. Using a multi-index DF has several advantages. First, the distinction between the different seasons/months can still be maintained (data from different months are not fused together into one large DF). Second, the multi-index DF facilitates finding and aggregating values across different months when needed. In Figure \ref{fig1} we can see the first and last 5 entries of bike rides from the multi-index DF:
 
 	\begin{figure}[h]
-	\hspace{0.5cm}
-	\includegraphics[width=7.2 in, height = 3.3 in]{img1.png}
+	\hspace{-1.1cm}
+	\includegraphics[scale=0.45]{img1.png}
 	\caption{First and last 5 entries of bike rides from the original\_data}
 	\label{fig1}
 	\end{figure}
@@ -67,15 +67,15 @@ The library Pandas from Python was used to perform the analysis, and Matplotlib 
 	This method calculates the percentage of null values for each column and month. The results are shown in Figure \ref{fig4}. As we can see the columns \textit{start\_station\_name}, \textit{start\_station\_id}, \textit{end\_station\_name}, \textit{end\_station\_id} in every month have 13-17\% null values. The columns \textit{end\_lat} and \textit{end\_long} have less than 1\% null values. In order to explore the dataset, as well as these null values a bit further, the number of unique (distinct) values for each column in original\_data[``May"] is calculated and shown in Figure \ref{fig2}. The choice of the month of May is random and should not make a difference. 
 	
 	\begin{figure}[h]
-	\centering
-	\includegraphics[width=7.2 in, height = 2.5 in]{imgNAN.png}
+	\hspace{-0.5in}
+	\includegraphics[scale=0.48]{imgNAN.png}
 	\caption{Percentage of null values for each column across the months}
 	\label{fig4}
 	\end{figure}
 	
 	\begin{figure}[h]
 	\centering
-	\includegraphics[scale = 0.6]{imgUni.png} %[width=8 in, height = 2 in]
+	\includegraphics[scale = 0.6]{imgUni.png} 
 	\caption{No. of unique values for every column in original\_data[``May"]}
 	\label{fig2}
 	\end{figure}
@@ -86,9 +86,8 @@ The library Pandas from Python was used to perform the analysis, and Matplotlib 
 	\item \textit{started(ended)\_at\_unique} = 503683,  505259: since these are datetimes (yy-mm-dd hh:mm:ss), one may have expected that they would have as many distinct values as the number of entries, since it seems unlikely for more than one rider to have rented a bike at the exact same time down to the second. However, the number of unique values in these columns is less than the number of entries by 17\%. To ensure that these are not duplicate entries but with different \textit{ride\_id}, one of these incidents has been retrieved and is shown in Figure \ref{fig10}. By looking at the values, it is clear that they are indeed different entries but with the exact same start time.
 	
 	\begin{figure}[h]
-	%\centering
-	\hspace{0.5cm}
-	\includegraphics[width=7.2 in, height = 1.3 in]{imgDups1.png}
+	\hspace{-0.5in}
+	\includegraphics[scale=0.46]{imgDups1.png}
 	\caption{Entries from original\_data[``May"] that have the same \textit{started\_at}}
 	\label{fig10}
 	\end{figure}
@@ -112,7 +111,7 @@ Next, is data formatting. We have already looked at the columns \textit{rideable
 
 	\begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.56]{imgNEG.png}
+	\includegraphics[scale=0.6]{imgNEG.png}
 	\caption{Entries where the ended\_at time is before the started\_at time}
 	\label{fig8}
 	\end{figure}
@@ -126,10 +125,10 @@ Looking at the entries in Figure \ref{fig8}, we can see that these are cases whe
 \section*{Analysis:}
 \begin{itemize}
 \item \textit{prepare\_data}:\\
-	The method \textit{prepare\_data} adds two new columns: \textit{ride\_length}: the difference between the columns \textit{ended\_at} and \textit{started\_at} times, and \textit{day\_of\_week}: extracted from the date in \textit{started\_at}. Then the columns \textit{started\_at} and \textit{ended\_at} can be dropped, since they are now redundant.
+	The method \textit{prepare\_data} adds two new columns: \textit{ride\_length}: the difference between the columns \textit{ended\_at} and \textit{started\_at} times, and \textit{day\_of\_week}: extracted from the date in \textit{started\_at}. Then the columns \textit{started\_at} and \textit{ended\_at} are be dropped, since the new columns make them redundant.
 	
 \item \textit{mean\_max\_mode}:\\	
-	This method groups the data first by month and then calculates the mean and maximum ride length, as well as the mode of the day of the week; i.e. the day of the week that occurred the most. The method then aggregates the mean, mode and max values across the entire year. The results are shown in Figure \ref{fig9}. The mean ride length varies between 13 - 22 minutes across the months, whereas the maximum ride length is 68 days. 
+	This method groups the data first by month and then calculates the mean and maximum ride length, as well as the mode of the day of the week. The method then aggregates the mean, mode and max values across the entire year. The results are shown in Figure \ref{fig9}. The mean ride length varies between 13 - 22 minutes across the months, whereas the maximum ride length is 68 days. 
 	
 	\begin{figure}[h]
 	\centering
@@ -148,7 +147,7 @@ Looking at the entries in Figure \ref{fig8}, we can see that these are cases whe
 	\label{fig11}
 	\end{figure}
 	
-From the plot of the mean values we observe that casual riders consistently have longer rides, than members across the entire year. Furthermore, the mean ride length for casual riders varies across the year from approximately 20 minutes in the colder months to a peak of 35 minutes in August. In contrast, the mean ride length for members changes only from 10 to 13 minutes. When looking at the maximum ride length plot we can see a similar pattern, where members never have a ride that exceeds one day, whereas casual riders have maximum ride lengths that can go up from 1-68 days. However, it is important to note here that such longer rides, are outliers that occur quite rarely in the dataset. This can be seen when plotting the entire distribution of ride lengths in a box plot shown in Figure \ref{fig13}.  
+From the plot of the mean values in Figure \ref{fig12} (left) we observe that casual riders consistently have longer rides, than members across the entire year. Furthermore, the mean ride length for casual riders varies across the year from approximately 20 minutes in the colder months to a peak of 35 minutes in August. In contrast, the mean ride length for members changes only from 10 to 13 minutes. When looking at the maximum ride length plot we can see a similar pattern; casual riders have longer rides, and their maximum ride lengths that changes from 1-68 days whereas members never have a ride that exceeds one day. However, it is important to note here that such longer rides (68 days), are outliers that occur quite rarely in the dataset. This can be seen when plotting the entire distribution of ride lengths in a box plot shown in Figure \ref{fig13}.  
 	
 	\begin{figure}[h]
 	\centering
@@ -162,7 +161,7 @@ From the plot of the mean values we observe that casual riders consistently have
 	\label{fig12}
 	\end{figure}
 	
-A box plot typically shows the middle 50\% of the distribution inside a box, then the lower and upper 25\% are shown by the whiskers, and finally circles represent outliers. We can see that the entire distribution of ride lengths for casual rider is between 0-50 minutes, with outliers in the range from 1-70 days. As for members, the ride lengths vary between 0-30 minutes, with outliers in the range 1- 25 hours. Therefore, if we ignore the outliers, the difference between the ride lengths for casual riders and members can be seen side by side in Figure \ref{fig15}.
+A box plot typically shows the middle 50\% of the distribution inside a box, then the lower and upper 25\% are shown by the whiskers, and finally circles represent outliers. We can see that the entire distribution of ride lengths for casual rider is between 0-50 minutes, and the outliers are the ones that occupy the range 1-70 days. As for members, the distribution of ride length lies in the range 0-30 minutes, and its outliers 1- 25 hours. Therefore, if we ignore the outliers, the difference between the ride lengths for casual riders and members can be seen more clearly in Figure \ref{fig15}.
 	
 	\begin{figure}[h]
 	\hspace{-0.5in}
@@ -174,9 +173,12 @@ A box plot typically shows the middle 50\% of the distribution inside a box, the
 	\begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.6]{boxplot_distribution2.pdf} 
-	\caption{Box plot comparison of the ride length distributions casual and member riders}
+	\caption{Box plot comparison between the ride length distributions of casual and member riders}
 	\label{fig15}
 	\end{figure}
+
+Figure \ref{fig15} shows that, after ignoring outliers, the main distribution of ride lengths for casual riders indeed   
+
 
 In order to determine how significant this difference is we need to look at the number rides for the different rider types. 
 	
