@@ -53,11 +53,11 @@ The library Pandas from Python was used to perform the analysis, and Matplotlib 
 	\centering
 	\begin{subfigure}{.4\textwidth}
 	\hspace{0.5 in}
-		\includegraphics[scale=0.6]{img2.png}
+		\includegraphics[scale=0.5]{img2.png}
 	\end{subfigure}
 	\begin{subfigure}{.4\textwidth}
 	\hspace{0.5 in}
-		\includegraphics[scale=0.6]{img3.png}
+		\includegraphics[scale=0.5]{img3.png}
 	\end{subfigure}
 	\caption{No of entries and average before and after removing duplicates}
 	\label{fig3}
@@ -127,74 +127,120 @@ Looking at the entries in Figure \ref{fig8}, we can see that these are cases whe
 \item \textit{prepare\_data}:\\
 	The method \textit{prepare\_data} adds two new columns: \textit{ride\_length}: the difference between the columns \textit{ended\_at} and \textit{started\_at} times, and \textit{day\_of\_week}: extracted from the date in \textit{started\_at}. Then the columns \textit{started\_at} and \textit{ended\_at} are be dropped, since the new columns make them redundant.
 	
-\item \textit{mean\_max\_mode}:\\	
-	This method groups the data first by month and then calculates the mean and maximum ride length, as well as the mode of the day of the week. The method then aggregates the mean, mode and max values across the entire year. The results are shown in Figure \ref{fig9}. The mean ride length varies between 13 - 22 minutes across the months, whereas the maximum ride length is 68 days. 
-	
+	\item \textit{get\_rides\_per\_rider}:\\
+	The method \textit{get\_rides\_per\_rider} returns a pivot table whose index is the month, and the columns are the number of rides for each rider type. The method also returns the total number of rides for the entire year. The resulting pivot table is shown in Figure (\ref{fig17_1}) left, and is visualised using a plot on the right Figure \ref{fig17_2}. From the plot we observe that per month, there is approximately 100,000 more rides by members than by casual riders. Rides by members and casual riders follow the same pattern of peaking during the summer months, and dropping during the winter months. 
+
 	\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.7]{imgMeanMax1.png} 
-	\caption{The mean and max ride length, and mode of day of the week}
-	\label{fig9}
-	\end{figure}
-	
-	In order to understand how the data shown Figure \ref{fig9} differs between members and casual riders, a pivot table is used to show the maximum and mean value per month by rider type. The table is shown in Figure \ref{fig11}. A quick look shows that the casual riders have longer mean and maximum ride lengths when compared to members. To see this more clearly the mean and maximum ride length are plotted in Figure \ref{fig12}.  
-		\pagebreak
-		
-	\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.6]{imgMeanMax2.png} 
-	\caption{Table of mean and max ride length divided by rider type}
-	\label{fig11}
-	\end{figure}
-	
-From the plot of the mean values in Figure \ref{fig12} (left) we observe that casual riders consistently have longer rides, than members across the entire year. Furthermore, the mean ride length for casual riders varies across the year from approximately 20 minutes in the colder months to a peak of 35 minutes in August. In contrast, the mean ride length for members changes only from 10 to 13 minutes. When looking at the maximum ride length plot we can see a similar pattern; casual riders have longer rides, and their maximum ride lengths that changes from 1-68 days whereas members never have a ride that exceeds one day. However, it is important to note here that such longer rides (68 days), are outliers that occur quite rarely in the dataset. This can be seen when plotting the entire distribution of ride lengths in a box plot shown in Figure \ref{fig13}.  
-	
-	\begin{figure}[h]
-	\centering
-	\begin{subfigure}{.45\textwidth}
-		\includegraphics[scale=0.48]{mean_cvsm_month.pdf} 
+	\hspace{0.8in}
+	\begin{subfigure}{.2\textwidth}
+		\includegraphics[scale=0.55]{img4.png} 
+		\caption{}
+		\label{fig17_1}
 	\end{subfigure}
-	\begin{subfigure}{.4\textwidth}
-		\includegraphics[scale=0.48]{max_cvsm.pdf}
+	\begin{subfigure}{.55\textwidth}
+	\hspace{1.2in}
+		\includegraphics[scale=0.48]{no_of_rides.pdf}
+		\caption{}
+		\label{fig17_2}
 	\end{subfigure}
-	\caption{Plots of mean and max ride length divided by rider type grouped by month}
-	\label{fig12}
+	\caption{Total no of rides per rider type}
 	\end{figure}
 	
-A box plot typically shows the middle 50\% of the distribution inside a box, then the lower and upper 25\% are shown by the whiskers, and finally circles represent outliers. We can see that the entire distribution of ride lengths for casual rider is between 0-50 minutes, and the outliers are the ones that occupy the range 1-70 days. As for members, the distribution of ride length lies in the range 0-30 minutes, and its outliers 1- 25 hours. Therefore, if we ignore the outliers, the difference between the ride lengths for casual riders and members can be seen more clearly in Figure \ref{fig15}.
-	
+\item \textit{mean\_max\_by\_month}:\\	
+	The method \textit{mean\_max\_by\_month} returns a pivot table whose index is the month, and the columns are the mean and maximum ride length for each rider type. The method also aggregates the mean and max values across the entire year. The pivot table is shown in the top of Figure \ref{fig11_1}, and the corresponding visualisations are shown on the bottom Figure \ref{fig11_2}.
+\pagebreak
 	\begin{figure}[h]
-	\hspace{-0.5in}
-	\includegraphics[scale=0.6]{boxplot_distribution.pdf} 
-	\caption{Box plots of the ride length distributions. Left: casual riders, Right: members}
+	\centering
+		\begin{subfigure}[b]{0.55\textwidth}
+   			\includegraphics[scale=0.6]{imgMeanMax2.png} 
+			\caption{}
+			\label{fig11_1}
+		\end{subfigure}
+
+		\begin{subfigure}[b]{0.55\textwidth}
+			\hspace{-1.5in}
+   			\begin{subfigure}{.45\textwidth}
+				\includegraphics[scale=0.48]{mean_cvsm_month.pdf} 
+			\end{subfigure}
+			\hspace{1.5in}
+			\begin{subfigure}{.4\textwidth}
+				\includegraphics[scale=0.48]{max_cvsm.pdf}
+			\end{subfigure}
+			\caption{}
+			\label{fig11_2}
+		\end{subfigure}
+		\caption{Mean and max ride length divided by rider type}
+	\end{figure}
+	
+From the plot of the mean values in Figure \ref{fig11_2} (left) we observe that casual riders have longer rides, than members across the entire year. Also, the mean ride length for casual riders varies across the year from approximately 20 minutes in the colder months to a peak of 35 minutes in August. As for members, their mean ride length changes only from 10 to 13 minutes. When looking at the maximum ride length plot in Figure \ref{fig11_2} (right) we see a similar pattern; casual riders have longer rides, and their maximum ride lengths changes from 1 day in the cold months to 68 days in August. As opposed to, members whom have a maximum ride length of 1 day all throughout the year. However, it is important to note here that such longer rides, as seen in the maximum ride length plot, are outliers that occur quite rarely in the dataset. This can be seen when plotting the entire dataset distribution of ride lengths using a box plot as shown in Figure \ref{fig13}.  
+\pagebreak
+	\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{boxplot_distribution.pdf} 
+	\caption{Box plots of the distribution of values in the ride length.}
 	\label{fig13}
 	\end{figure}
 	
+A box plot typically divides the values in a distribution into 4 quartiles (0-25\%, 25-50\%, 50-75\%, 75-100\%), and displays them as follow: the middle 2 quartiles (25-75\% of the distribution) are shown inside a box, the lower and upper 25\% are shown by whiskers, and circles are used to represent outliers. From Figure \ref{fig13} (left) we can see that the outlier points are the ones that occupy the range [1 - 70] days, whereas the distribution itself can only be seen in the [0 - 50] minute range. As for members (Figure \ref{fig13} (right)), the distribution of ride length lies in the range [0 - 30] minutes, and its outliers are in the [1- 25] hours range. Therefore, if we ignore the outliers, the difference between the ride lengths for casual riders and members can be seen more clearly in Figure \ref{fig15}.
+
 	\begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.6]{boxplot_distribution2.pdf} 
-	\caption{Box plot comparison between the ride length distributions of casual and member riders}
+	\includegraphics[scale=0.5]{boxplot_distribution2.pdf} 
+	\caption{Box plot comparison between the ride lengths of casual and member riders}
 	\label{fig15}
 	\end{figure}
+\pagebreak
+Figure \ref{fig15} shows that the main distribution (i.e. without outliers) of ride lengths for casual riders varies between [0 - 46] minutes, and that the middle 50\% of the values are between [6 - 22] minutes. As opposed to members whose ride length vary between [0 - 29] minutes, and the middle 50\% are between [4 - 14] minutes. Therefore, we can now confidently conclude that casual riders have longer ride lengths, whether we compare the mean across the whole dataset, or each quartile of the distribution. These results are summarised in Table \ref{table1}.
 
-Figure \ref{fig15} shows that, after ignoring outliers, the main distribution of ride lengths for casual riders indeed   
-
-
-In order to determine how significant this difference is we need to look at the number rides for the different rider types. 
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ | c | c | c| c | c |  } 
+\hline
+   	& 0 - 25\% 	& 25 - 70\% 	& 75 - 100\% &  mean (mins)  \\ 
+  \hline
+casual 	& 0 - 6 		&  6 - 22 		& 22 - 46 & 27 \\
+\hline
+member 	& 0 - 4 		& 4 - 14		& 14 - 29 & 12 \\
+\hline
+\end{tabular}
+\caption{Summary of comparison between ride lengths for casual riders and members }
+\label{table1}
+\end{center} 
+\end{table}
 	
-So far we have been looking at the data by first grouping it using the month. In order to get a different perspective, we now look at the mean value of the ride length, however when the data is grouped using the day of the week. The result can be seen in Figure \ref{fig14}. Here we see the same higher average for the casual riders when compared to the members.  
+	\item \textit{mean\_by\_day\_of\_week:}\\
+	So far we have looked at the data by first grouping it using the month (Fig. \ref{fig11_2}) or by looking at the entire distribution (Fig. \ref{fig13}). In order to get a different perspective, we will now look at the mean value of the ride length after the data has been grouped by the day of the week. The resulting pivot table as well as its visualisation are shown in Figure \ref{fig14}. Here we see the same higher average for the casual riders when compared to members, with a peak for casual riders during the weekend.  
+	
+	\begin{figure}[h]
+	\hspace{0.8in}
+	\begin{subfigure}{.2\textwidth}
+		\includegraphics[scale=0.6]{dayofweek_t.png} 
+		\caption{}
+		\label{fig14_1}
+	\end{subfigure}
+	\begin{subfigure}{.55\textwidth}
+	\hspace{1.2in}
+		\includegraphics[scale=0.48]{mean_cvsm_dayofweek.pdf} 
+		\caption{}
+		\label{fig14_2}
+	\end{subfigure}
+	\caption{Mean ride length per rider type grouped by day of the week}
+	\label{fig14}
+	\end{figure}
 
+	\item \textit{count\_rideable\_type}:\\
+	The method \textit{count\_rideable\_type} 
 	\begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.6]{mean_cvsm_dayofweek.pdf} 
-	\caption{Plot of mean ride length divided by rider type grouped by day of the week}
-	\label{fig14}
+	\includegraphics[scale=0.6]{rideable_types.pdf} 
+	\caption{rideable types}
+	\label{fig16}
 	\end{figure}
 	
 \end{itemize}
 
 \section*{Conclusion:}
 
-In general, casual riders always have a longer rides. And the behaviour across seasons or days varies with a peak in August and the weekends. We can see that the entire distribution of ride lengths for casual rider is between 0-50 minutes, with outliers in the range from 1-70 days. As for members, the ride lengths vary between 0-30 minutes, with outliers in the range 1- 25 hours. Therefore, if we ignore the outliers, the casual riders have a higher ride length by 66\%.
+In general, casual riders always have a longer rides. And the behaviour across seasons or days varies with a peak in August and the weekends. such longer rides, as seen in the maximum ride length plot, are outliers that occur quite rarely in the dataset and should not be used to draw conclusions about the behaviour of casual riders. We can see that the entire distribution of ride lengths for casual rider is between 0-50 minutes, with outliers in the range from 1-70 days. As for members, the ride lengths vary between 0-30 minutes, with outliers in the range 1- 25 hours. Therefore, if we ignore the outliers, the casual riders have a higher ride length by 66\%.
 
 \end{document}
