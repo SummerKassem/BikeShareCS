@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  12 FEB 2024 17:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  14 FEB 2024 14:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -368,15 +368,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--27
  []
 
 
-LaTeX Warning: Reference `fig1' on page 1 undefined on input line 37.
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
-<images//img1.png, id=6, 1349.04pt x 391.4625pt>
+ []
+
+<images//img1.png, id=7, 1349.04pt x 391.4625pt>
 File: images//img1.png Graphic file (type png)
 <use images//img1.png>
-Package pdftex.def Info: images//img1.png  used on input line 41.
+Package pdftex.def Info: images//img1.png  used on input line 40.
 (pdftex.def)             Requested size: 607.0624pt x 176.1565pt.
 
-Overfull \hbox (36.35027pt too wide) in paragraph at lines 40--42
+Overfull \hbox (36.35027pt too wide) in paragraph at lines 39--41
 []  [] 
  []
 
@@ -385,264 +387,233 @@ Overfull \hbox (36.35027pt too wide) in paragraph at lines 40--42
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./images
 //img1.png>]
-
-LaTeX Warning: Reference `fig1' on page 2 undefined on input line 47.
-
-
-LaTeX Warning: Reference `fig3' on page 2 undefined on input line 50.
-
-
-LaTeX Warning: Reference `fig3' on page 2 undefined on input line 50.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 49--51
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
 
-<images//img2.png, id=22, 276.03125pt x 394.47375pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--50
+
+ []
+
+<images//img2.png, id=25, 274.02374pt x 398.48875pt>
 File: images//img2.png Graphic file (type png)
 <use images//img2.png>
-Package pdftex.def Info: images//img2.png  used on input line 56.
-(pdftex.def)             Requested size: 138.01527pt x 197.23639pt.
-<images//img3.png, id=23, 317.185pt x 405.515pt>
+Package pdftex.def Info: images//img2.png  used on input line 55.
+(pdftex.def)             Requested size: 137.01154pt x 199.24388pt.
+<images//img3.png, id=26, 319.1925pt x 404.51125pt>
 File: images//img3.png Graphic file (type png)
 <use images//img3.png>
-Package pdftex.def Info: images//img3.png  used on input line 60.
-(pdftex.def)             Requested size: 158.5921pt x 202.75699pt.
+Package pdftex.def Info: images//img3.png  used on input line 61.
+(pdftex.def)             Requested size: 159.59586pt x 202.25513pt.
 
-LaTeX Warning: Reference `fig4' on page 2 undefined on input line 67.
+Underfull \hbox (badness 10000) in paragraph at lines 69--71
 
+ []
 
-LaTeX Warning: Reference `fig2' on page 2 undefined on input line 67.
-
-<images//imgNAN.png, id=24, 1261.71375pt x 316.18124pt>
+<images//imgNAN.png, id=28, 1261.71375pt x 316.18124pt>
 File: images//imgNAN.png Graphic file (type png)
 <use images//imgNAN.png>
-Package pdftex.def Info: images//imgNAN.png  used on input line 71.
+Package pdftex.def Info: images//imgNAN.png  used on input line 74.
 (pdftex.def)             Requested size: 605.61572pt x 151.76526pt.
 
-Overfull \hbox (30.0668pt too wide) in paragraph at lines 70--72
+Overfull \hbox (30.0668pt too wide) in paragraph at lines 73--75
 []  [] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images//imgUni.png, id=25, 266.9975pt x 259.97125pt>
+<images//imgUni.png, id=30, 316.18124pt x 308.15125pt>
 File: images//imgUni.png Graphic file (type png)
 <use images//imgUni.png>
-Package pdftex.def Info: images//imgUni.png  used on input line 78.
-(pdftex.def)             Requested size: 160.19972pt x 155.98395pt.
+Package pdftex.def Info: images//imgUni.png  used on input line 84.
+(pdftex.def)             Requested size: 189.7102pt x 184.89217pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `fig10' on page 2 undefined on input line 86.
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
 
-<images//imgDups1.png, id=26, 1324.95pt x 118.4425pt>
+ []
+
+[2 <./images//img2.png> <./images//img3.png>]
+<images//imgDups1.png, id=43, 1324.95pt x 118.4425pt>
 File: images//imgDups1.png Graphic file (type png)
 <use images//imgDups1.png>
-Package pdftex.def Info: images//imgDups1.png  used on input line 90.
+Package pdftex.def Info: images//imgDups1.png  used on input line 96.
 (pdftex.def)             Requested size: 609.4844pt x 54.48419pt.
 
-Overfull \hbox (33.93549pt too wide) in paragraph at lines 89--91
+Overfull \hbox (33.93549pt too wide) in paragraph at lines 95--97
 []  [] 
  []
 
-[2 <./images//img2.png> <./images//img3.png>] [3 <./images//imgNAN.png> <./imag
-es//imgUni.png> <./images//imgDups1.png>]
+[3 <./images//imgNAN.png> <./images//imgUni.png> <./images//imgDups1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
 
-LaTeX Warning: Reference `fig8' on page 4 undefined on input line 110.
+ []
 
-<images//imgNEG.png, id=46, 642.4pt x 323.2075pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--125
+
+ []
+
+[4]
+<images//imgNEG.png, id=65, 642.4pt x 323.2075pt>
 File: images//imgNEG.png Graphic file (type png)
 <use images//imgNEG.png>
-Package pdftex.def Info: images//imgNEG.png  used on input line 114.
+Package pdftex.def Info: images//imgNEG.png  used on input line 128.
 (pdftex.def)             Requested size: 385.44298pt x 193.926pt.
-
-LaTeX Warning: Reference `fig8' on page 4 undefined on input line 119.
-
-[4 <./images//imgNEG.png>]
-
-LaTeX Warning: Reference `fig17_1' on page 5 undefined on input line 131.
-
-
-LaTeX Warning: Reference `fig17_2' on page 5 undefined on input line 131.
-
-<images//img4.png, id=56, 312.16624pt x 452.69125pt>
+<images//img4.png, id=68, 312.16624pt x 452.69125pt>
 File: images//img4.png Graphic file (type png)
 <use images//img4.png>
-Package pdftex.def Info: images//img4.png  used on input line 136.
+Package pdftex.def Info: images//img4.png  used on input line 154.
 (pdftex.def)             Requested size: 171.69196pt x 248.98096pt.
 
-Overfull \hbox (63.28862pt too wide) in paragraph at lines 136--137
+Overfull \hbox (63.28862pt too wide) in paragraph at lines 154--155
 [][] 
  []
 
-<images//no_of_rides.pdf, id=57, 542.025pt x 505.89pt>
+<images//no_of_rides.pdf, id=69, 542.025pt x 505.89pt>
 File: images//no_of_rides.pdf Graphic file (type pdf)
 <use images//no_of_rides.pdf>
-Package pdftex.def Info: images//no_of_rides.pdf  used on input line 142.
+Package pdftex.def Info: images//no_of_rides.pdf  used on input line 160.
 (pdftex.def)             Requested size: 260.16904pt x 242.82443pt.
 
-Overfull \hbox (51.38849pt too wide) in paragraph at lines 141--143
+Overfull \hbox (51.38849pt too wide) in paragraph at lines 159--161
 []  [] 
  []
 
 
-LaTeX Warning: Reference `fig11_1' on page 5 undefined on input line 150.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `fig11_2' on page 5 undefined on input line 150.
+Underfull \hbox (badness 10000) in paragraph at lines 167--169
 
-<images//imgMeanMax2.png, id=58, 513.92pt x 397.485pt>
+ []
+
+[5 <./images//imgNEG.png>]
+<images//imgMeanMax2.png, id=82, 513.92pt x 397.485pt>
 File: images//imgMeanMax2.png Graphic file (type png)
 <use images//imgMeanMax2.png>
-Package pdftex.def Info: images//imgMeanMax2.png  used on input line 155.
+Package pdftex.def Info: images//imgMeanMax2.png  used on input line 175.
 (pdftex.def)             Requested size: 308.35437pt x 238.49283pt.
 
-Overfull \hbox (10.23897pt too wide) in paragraph at lines 155--156
+Overfull \hbox (10.23897pt too wide) in paragraph at lines 175--176
 [][] 
  []
 
-<images//mean_cvsm_month.pdf, id=59, 542.025pt x 505.89pt>
+<images//mean_cvsm_month.pdf, id=83, 542.025pt x 505.89pt>
 File: images//mean_cvsm_month.pdf Graphic file (type pdf)
 <use images//mean_cvsm_month.pdf>
-Package pdftex.def Info: images//mean_cvsm_month.pdf  used on input line 163.
+Package pdftex.def Info: images//mean_cvsm_month.pdf  used on input line 183.
 (pdftex.def)             Requested size: 260.16904pt x 242.82443pt.
 
-Overfull \hbox (126.01802pt too wide) in paragraph at lines 163--164
+Overfull \hbox (126.01802pt too wide) in paragraph at lines 183--184
 [][] 
  []
 
-<images//max_cvsm.pdf, id=60, 542.025pt x 505.89pt>
+<images//max_cvsm.pdf, id=84, 542.025pt x 505.89pt>
 File: images//max_cvsm.pdf Graphic file (type pdf)
 <use images//max_cvsm.pdf>
-Package pdftex.def Info: images//max_cvsm.pdf  used on input line 167.
+Package pdftex.def Info: images//max_cvsm.pdf  used on input line 189.
 (pdftex.def)             Requested size: 260.16904pt x 242.82443pt.
 
-Overfull \hbox (140.9247pt too wide) in paragraph at lines 167--168
+Overfull \hbox (140.9247pt too wide) in paragraph at lines 189--190
 [][] 
  []
 
-[5 <./images//img4.png> <./images//no_of_rides.pdf>]
-
-LaTeX Warning: Reference `fig11_2' on page 6 undefined on input line 175.
-
-
-LaTeX Warning: Reference `fig11_2' on page 6 undefined on input line 175.
-
-
-LaTeX Warning: Reference `fig13' on page 6 undefined on input line 175.
-
-<images//boxplot_distribution.pdf, id=105, 1011.78pt x 505.89pt>
-File: images//boxplot_distribution.pdf Graphic file (type pdf)
-<use images//boxplot_distribution.pdf>
-Package pdftex.def Info: images//boxplot_distribution.pdf  used on input line 1
-79.
-(pdftex.def)             Requested size: 505.88876pt x 252.94437pt.
-[6 <./images//imgMeanMax2.png> <./images//mean_cvsm_month.pdf> <./images//max_c
-vsm.pdf
+[6 <./images//img4.png> <./images//no_of_rides.pdf>] [7 <./images//imgMeanMax2.
+png> <./images//mean_cvsm_month.pdf> <./images//max_cvsm.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./images//max_cvsm.pdf): PDF
  inclusion: multiple pdfs with page group included in a single page
 >]
-
-LaTeX Warning: Reference `fig13' on page 7 undefined on input line 184.
-
-
-LaTeX Warning: Reference `fig13' on page 7 undefined on input line 184.
-
-
-LaTeX Warning: Reference `fig15' on page 7 undefined on input line 184.
-
-<images//boxplot_distribution2.pdf, id=196, 462.52798pt x 462.52798pt>
+<images//boxplot_distribution.pdf, id=218, 1011.78pt x 505.89pt>
+File: images//boxplot_distribution.pdf Graphic file (type pdf)
+<use images//boxplot_distribution.pdf>
+Package pdftex.def Info: images//boxplot_distribution.pdf  used on input line 2
+01.
+(pdftex.def)             Requested size: 505.88876pt x 252.94437pt.
+<images//boxplot_distribution2.pdf, id=222, 462.52798pt x 462.52798pt>
 File: images//boxplot_distribution2.pdf Graphic file (type pdf)
 <use images//boxplot_distribution2.pdf>
 Package pdftex.def Info: images//boxplot_distribution2.pdf  used on input line 
-188.
+210.
 (pdftex.def)             Requested size: 231.26341pt x 231.26341pt.
-[7 <./images//boxplot_distribution.pdf> <./images//boxplot_distribution2.pdf
+ [8 <./images//boxplot_distribution.pdf> <./images//boxplot_distribution2.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./images//boxplot_distributi
 on2.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
 e
 >]
-
-LaTeX Warning: Reference `fig15' on page 8 undefined on input line 193.
-
-
-LaTeX Warning: Reference `table1' on page 8 undefined on input line 193.
-
-
-LaTeX Warning: Reference `fig11_2' on page 8 undefined on input line 212.
-
-
-LaTeX Warning: Reference `fig13' on page 8 undefined on input line 212.
-
-
-LaTeX Warning: Reference `fig14' on page 8 undefined on input line 212.
-
-<images//dayofweek_t.png, id=284, 325.215pt x 395.4775pt>
+<images//dayofweek_t.png, id=313, 325.215pt x 395.4775pt>
 File: images//dayofweek_t.png Graphic file (type png)
 <use images//dayofweek_t.png>
-Package pdftex.def Info: images//dayofweek_t.png  used on input line 217.
+Package pdftex.def Info: images//dayofweek_t.png  used on input line 223.
 (pdftex.def)             Requested size: 195.1305pt x 237.28833pt.
 
-Overfull \hbox (86.72716pt too wide) in paragraph at lines 217--218
+Overfull \hbox (86.72716pt too wide) in paragraph at lines 223--224
 [][] 
  []
 
-<images//mean_cvsm_dayofweek.pdf, id=285, 542.025pt x 505.89pt>
+<images//mean_cvsm_dayofweek.pdf, id=314, 542.025pt x 505.89pt>
 File: images//mean_cvsm_dayofweek.pdf Graphic file (type pdf)
 <use images//mean_cvsm_dayofweek.pdf>
 Package pdftex.def Info: images//mean_cvsm_dayofweek.pdf  used on input line 22
-3.
+9.
 (pdftex.def)             Requested size: 260.16904pt x 242.82443pt.
 
-Overfull \hbox (51.38849pt too wide) in paragraph at lines 222--224
+Overfull \hbox (51.38849pt too wide) in paragraph at lines 228--230
 []  [] 
  []
 
-<images//rideable_types.pdf, id=286, 433.62pt x 289.08pt>
+[9 <./images//dayofweek_t.png> <./images//mean_cvsm_dayofweek.pdf>]
+<images//rideable_types.pdf, id=362, 433.62pt x 289.08pt>
 File: images//rideable_types.pdf Graphic file (type pdf)
 <use images//rideable_types.pdf>
-Package pdftex.def Info: images//rideable_types.pdf  used on input line 235.
+Package pdftex.def Info: images//rideable_types.pdf  used on input line 243.
 (pdftex.def)             Requested size: 260.17401pt x 173.44933pt.
+ [10 <./images//rideable_types.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[8 <./images//dayofweek_t.png> <./images//mean_cvsm_dayofweek.pdf>] [9 <./image
-s//rideable_types.pdf>] (./Report.aux)
-
-LaTeX Warning: There were undefined references.
+ []
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+Underfull \hbox (badness 10000) in paragraph at lines 256--257
 
+ []
+
+[11] (./Report.aux)
 Package rerunfilecheck Info: File `Report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10754 strings out of 476025
- 176387 string characters out of 5790018
- 1861388 words of memory out of 5000000
- 31060 multiletter control sequences out of 15000+600000
+ 10764 strings out of 476025
+ 176493 string characters out of 5790018
+ 1862388 words of memory out of 5000000
+ 31066 multiletter control sequences out of 15000+600000
  518132 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,77p,1019b,654s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,77p,1233b,674s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
-/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
-sr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
-/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/l
-ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
-cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/loc
-al/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Report.pdf (9 pages, 1027230 bytes).
+></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
+usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
+r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
+local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lo
+cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
+al/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/loca
+l/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on Report.pdf (11 pages, 1052169 bytes).
 PDF statistics:
- 420 PDF objects out of 1000 (max. 8388607)
- 128 compressed objects within 2 object streams
- 29 named destinations out of 1000 (max. 500000)
+ 462 PDF objects out of 1000 (max. 8388607)
+ 166 compressed objects within 2 object streams
+ 33 named destinations out of 1000 (max. 500000)
  86 words of extra memory for PDF output out of 10000 (max. 10000000)
 
