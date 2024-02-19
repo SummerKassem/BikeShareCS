@@ -23,16 +23,24 @@
 \date{}
 \maketitle
 
-This report provides the results and step-by-step explanation of the data analysis performed for a bike-sharing case study. The data belongs to a company that has two kinds of users: annual members and casual riders. The goal of the study was to identify how annual members and casual riders use the bikes differently in order to help the marketing team whose target is to convert casual riders into annual members in the next campaign. The data on which the analysis was carried out is from January-December 2023 and was downloaded from \url{https://divvy-tripdata.s3.amazonaws.com/index.html}. \\
+This report provides the step-by-step explannation of the data analysis performed for a bike-sharing case study. The data belongs to a company that has two kinds of users: annual members and casual riders. The aim of the marketing team target is to convert casual riders into annual members in the next campaign. Thus, the goal of the study was to identify how annual members and casual riders use the bikes differently in order to provide the marketing team with insights. The data on which the analysis was carried out is from January-December 2023 and was downloaded from \href{https://divvy-tripdata.s3.amazonaws.com/index.html}{here}. \\
 
-The library Pandas from Python was used to perform the analysis, and Matplotlib was used to plot the results. The code can be found in the Jupyter Notebook \href{https://github.com/SummerKassem/BikeShareCS/blob/main/Code/bike_share_analysis.ipynb}{bike\_share\_analysis.ipynb}. \\
+The library Pandas from Python was used to perform the analysis, and Matplotlib was used to plot the results. The code can be found in the Jupyter Notebook \href{https://github.com/SummerKassem/BikeShareCS/blob/main/PythonCode/bike_share_analysis.html}{here}. \\
 
-In the following sections the methods that were used throughout the analysis are explained. 
+This report consists of the following sections:
+\begin{enumerate}
+	\item Importing
+	\item Exploration
+	\item Cleaning
+	\item Preparation
+	\item Analysis
+	\item Conclusion
+\end{enumerate}
 
-\section*{Exploration:}
+\section{Importing:}
 
 \begin{itemize}
-	\item \textit{read\_data}:\\
+	\item reading the data:\\
 	This method reads the bike rides from each .csv file (month), stores each month into a DataFrame (DF), and then concatenates the data into a single multi-index DF. Using a multi-index DF allows the distinction between the different months to still be maintained, while also facilitating the aggregation of values across the entire year when needed. In Figure (\ref{fig1}) we can see the first and last 5 entries of bike rides from the concatenated multi-index DF:
 
 	\begin{figure}[h]
