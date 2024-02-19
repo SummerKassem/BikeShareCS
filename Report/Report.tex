@@ -27,7 +27,7 @@ This report provides the step-by-step explannation of the data analysis performe
 
 The library Pandas from Python was used to perform the analysis, and Matplotlib was used to plot the results. The code can be found in the Jupyter Notebook \href{https://github.com/SummerKassem/BikeShareCS/blob/main/PythonCode/bike_share_analysis.html}{here}. \\
 
-This report consists of the following sections:
+The structure of the report will be as follows:
 \begin{enumerate}
 	\item Importing
 	\item Exploration
@@ -39,9 +39,7 @@ This report consists of the following sections:
 
 \section{Importing:}
 
-\begin{itemize}
-	\item reading the data:\\
-	This method reads the bike rides from each .csv file (month), stores each month into a DataFrame (DF), and then concatenates the data into a single multi-index DF. Using a multi-index DF allows the distinction between the different months to still be maintained, while also facilitating the aggregation of values across the entire year when needed. In Figure (\ref{fig1}) we can see the first and last 5 entries of bike rides from the concatenated multi-index DF:
+The bike rides for each month are stored in a separate .csv file. So first, each file is read and stored into a DataFrame (DF), and then all 12 DFs are concatenated into a single multi-index DF. Using a multi-index DF allows the distinction between the different months to still be maintained, while also facilitating the aggregation of values across the entire year when needed. In Figure (\ref{fig1}) we can see the first and last 5 entries of bike rides from the concatenated multi-index DF:
 
 	\begin{figure}[h]
 	\hspace{-1.1cm}
@@ -53,7 +51,7 @@ This report consists of the following sections:
 	
 	In Figure (\ref{fig1}) the multi-index of the DF is shown in the first two columns (month, row\_id). Then looking at the entries themselves we can see that the data consists of 13 columns: 1) ride id, 2) type of bike, 3-4) date and time for the start and end of the ride, 5-12) the name, id, latitude and longitude of the start and end stations, and 13) whether the rider was a casual rider or a member.  \\
 	
-	\item \textit{count\_entries}:\\
+	\textit{count\_entries}:\\
 	This method shows the number of bike rides in each month, the total number of bike rides in the dataset (year 2023), and the average per month. The result is shown in Figure (\ref{fig3_1}). The dataset contains in total almost 5.7 Million entries, with an average of approximately 480,000 rides per month. From Decemeber to March the number of rides is relatively lower than the average, which is expected as these are cold months. This is confirmed by the peak highlighted in August. After retrieving this information for the original dataset, the duplicates are dropped, and the method is called again. The result of running the method after dropping the duplicates is shown in Figure (\ref{fig3_2}). The number of entries before and after is identical, therefore the original dataset did not have any duplicates.\\ 
 	
 	\begin{figure}[h]
@@ -74,7 +72,7 @@ This report consists of the following sections:
 	\label{fig3}
 	\end{figure}
 
-	\item \textit{get\_null\_percentage}:\\
+	\textit{get\_null\_percentage}:\\
 	This method calculates the percentage of null values for each column. The results are shown in Figure (\ref{fig4}). As we can see the columns \textit{start\_station\_name}, \textit{start\_station\_id}, \textit{end\_station\_name}, \textit{end\_station\_id} in every month have 13-17\% null values. The columns \textit{end\_lat} and \textit{end\_long} have less than 1\% null values. \\
 	
 	\begin{figure}[h]
@@ -84,7 +82,7 @@ This report consists of the following sections:
 	\label{fig4}
 	\end{figure}
 	
-	\item \textit{get\_unique}:\\
+	\textit{get\_unique}:\\
 	This method gets the number of unique (distinct) values for each column in the month of May. The result is shown in Figure (\ref{fig2}). The choice of the month of May is random and should not make a difference. 
 	
 	\begin{figure}[h]
@@ -110,7 +108,7 @@ This report consists of the following sections:
 	\item \textit{start(end)\_lat(long)\_unique} = 188,591, 185,419, 4759, 4762: the start latitude and longitude numbers seem to be as expected, which is less than the total number of entries, but more than the number of stations (this is based on the assumption that the exact location where a bike is parked can vary within the station especially that the values are given to the $6^{th}$ decimal place). However, there is a large difference between the number of values in the start ($\sim$188,000) and the numbers in the end ($\sim$4800). This difference cannot be accounted for by the null values in the end columns, since these were less than 1\%. If these values are true, that would mean that users rode there bikes from many start locations, but mostly ended up in a much smaller set of locations. Which cannot be the case since that would have been reflected in a similar difference between the number of start and end stations. 
 	\item \textit{member\_casual\_unique} = 2: these 2 values are the types of riders, which are: \Big(member, casual\Big).
 	\end{itemize}
-\end{itemize}
+
 	
 \section*{Cleaning:}
 After exploring the dataset, we can see that the extractable information can be divided into information about the:
