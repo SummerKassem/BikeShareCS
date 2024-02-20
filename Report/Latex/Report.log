@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  19 FEB 2024 15:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.2)  20 FEB 2024 18:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -233,7 +233,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip50
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 8.
+Package hyperref Info: Option `colorlinks' set `true' on input line 11.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
@@ -264,24 +264,24 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 (./Report.aux)
 \openout1 = `Report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -308,7 +308,7 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 21.
+Package hyperref Info: Link coloring ON on input line 23.
 
 (./Report.out) (./Report.out)
 \@outlinefile=\write3
@@ -350,268 +350,247 @@ Package hyperref Info: Link coloring ON on input line 21.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 25.
+(Font)              <14.4> on input line 27.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 25.
+(Font)              <7> on input line 27.
 
 LaTeX Warning: No \author given.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 26--27
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--29
-
- []
-
-<images//img1.png, id=11, 1349.04pt x 391.4625pt>
-File: images//img1.png Graphic file (type png)
-<use images//img1.png>
-Package pdftex.def Info: images//img1.png  used on input line 47.
-(pdftex.def)             Requested size: 607.0624pt x 176.1565pt.
-
-Overfull \hbox (36.35027pt too wide) in paragraph at lines 46--48
-[]  [] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 28.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 28.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 28.
+<images//original_data.png, id=27, 1349.04pt x 391.4625pt>
+File: images//original_data.png Graphic file (type png)
+<use images//original_data.png>
+Package pdftex.def Info: images//original_data.png  used on input line 44.
+(pdftex.def)             Requested size: 539.60645pt x 156.58221pt.
 [1
 
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 53--54
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
+s//original_data.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--57
-
- []
-
-<images//img2.png, id=32, 274.02374pt x 398.48875pt>
-File: images//img2.png Graphic file (type png)
-<use images//img2.png>
-Package pdftex.def Info: images//img2.png  used on input line 62.
+<images//no_of_rides_orig.png, id=47, 274.02374pt x 398.48875pt>
+File: images//no_of_rides_orig.png Graphic file (type png)
+<use images//no_of_rides_orig.png>
+Package pdftex.def Info: images//no_of_rides_orig.png  used on input line 77.
 (pdftex.def)             Requested size: 137.01154pt x 199.24388pt.
-<images//img3.png, id=33, 319.1925pt x 404.51125pt>
-File: images//img3.png Graphic file (type png)
-<use images//img3.png>
-Package pdftex.def Info: images//img3.png  used on input line 68.
-(pdftex.def)             Requested size: 159.59586pt x 202.25513pt.
+<images//no_of_rides_per_month.pdf, id=48, 867.24pt x 433.62pt>
+File: images//no_of_rides_per_month.pdf Graphic file (type pdf)
+<use images//no_of_rides_per_month.pdf>
+Package pdftex.def Info: images//no_of_rides_per_month.pdf  used on input line 
+83.
+(pdftex.def)             Requested size: 407.60286pt x 203.80142pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--78
-
- []
-
-[2 <./images//img1.png> <./images//img2.png> <./images//img3.png>]
-<images//imgNAN.png, id=45, 1261.71375pt x 316.18124pt>
-File: images//imgNAN.png Graphic file (type png)
-<use images//imgNAN.png>
-Package pdftex.def Info: images//imgNAN.png  used on input line 81.
-(pdftex.def)             Requested size: 605.61572pt x 151.76526pt.
-
-Overfull \hbox (30.0668pt too wide) in paragraph at lines 80--82
+Overfull \hbox (27.17943pt too wide) in paragraph at lines 82--86
 []  [] 
  []
 
-<images//imgUni.png, id=47, 316.18124pt x 308.15125pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
+
+ []
+
+[2 <./images//no_of_rides_orig.png> <./images//no_of_rides_per_month.pdf>]
+<images//null_percents.png, id=102, 1261.71375pt x 316.18124pt>
+File: images//null_percents.png Graphic file (type png)
+<use images//null_percents.png>
+Package pdftex.def Info: images//null_percents.png  used on input line 97.
+(pdftex.def)             Requested size: 542.52634pt x 135.95528pt.
+
+Overfull \hbox (0.50133pt too wide) in paragraph at lines 97--98
+ [][] 
+ []
+
+<images//imgUni.png, id=104, 316.18124pt x 308.15125pt>
 File: images//imgUni.png Graphic file (type png)
 <use images//imgUni.png>
-Package pdftex.def Info: images//imgUni.png  used on input line 91.
+Package pdftex.def Info: images//imgUni.png  used on input line 107.
 (pdftex.def)             Requested size: 189.7102pt x 184.89217pt.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 98.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 98.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 98.
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
+Underfull \hbox (badness 10000) in paragraph at lines 118--120
 
- []
-
-<images//imgDups1.png, id=49, 1324.95pt x 118.4425pt>
-File: images//imgDups1.png Graphic file (type png)
-<use images//imgDups1.png>
-Package pdftex.def Info: images//imgDups1.png  used on input line 103.
-(pdftex.def)             Requested size: 609.4844pt x 54.48419pt.
-
-Overfull \hbox (33.93549pt too wide) in paragraph at lines 102--104
-[]  [] 
  []
 
 [3{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-} <./images//imgNAN.png> <./images//imgUni.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
+} <./images//null_percents.png> <./images//imgUni.png>]
+<images//imgDups1.png, id=117, 1324.95pt x 118.4425pt>
+File: images//imgDups1.png Graphic file (type png)
+<use images//imgDups1.png>
+Package pdftex.def Info: images//imgDups1.png  used on input line 123.
+(pdftex.def)             Requested size: 529.97061pt x 47.37614pt.
 
+Overfull \hbox (12.2379pt too wide) in paragraph at lines 122--124
+[]  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
 
  []
 
 [4 <./images//imgDups1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 130--132
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
 
  []
 
-<images//imgNEG.png, id=74, 642.4pt x 323.2075pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--158
+
+ []
+
+<images//imgNEG.png, id=132, 642.4pt x 323.2075pt>
 File: images//imgNEG.png Graphic file (type png)
 <use images//imgNEG.png>
-Package pdftex.def Info: images//imgNEG.png  used on input line 135.
+Package pdftex.def Info: images//imgNEG.png  used on input line 161.
 (pdftex.def)             Requested size: 385.44298pt x 193.926pt.
 [5 <./images//imgNEG.png>]
-<images//img4.png, id=84, 312.16624pt x 452.69125pt>
+<images//img4.png, id=141, 312.16624pt x 452.69125pt>
 File: images//img4.png Graphic file (type png)
 <use images//img4.png>
-Package pdftex.def Info: images//img4.png  used on input line 161.
+Package pdftex.def Info: images//img4.png  used on input line 187.
 (pdftex.def)             Requested size: 171.69196pt x 248.98096pt.
 
-Overfull \hbox (63.28862pt too wide) in paragraph at lines 161--162
+Overfull \hbox (63.28862pt too wide) in paragraph at lines 187--188
 [][] 
  []
 
-<images//no_of_rides.pdf, id=85, 542.025pt x 505.89pt>
+<images//no_of_rides.pdf, id=142, 542.025pt x 505.89pt>
 File: images//no_of_rides.pdf Graphic file (type pdf)
 <use images//no_of_rides.pdf>
-Package pdftex.def Info: images//no_of_rides.pdf  used on input line 167.
+Package pdftex.def Info: images//no_of_rides.pdf  used on input line 193.
 (pdftex.def)             Requested size: 260.16904pt x 242.82443pt.
 
-Overfull \hbox (51.38849pt too wide) in paragraph at lines 166--168
+Overfull \hbox (51.38849pt too wide) in paragraph at lines 192--194
 []  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--176
+Underfull \hbox (badness 10000) in paragraph at lines 200--202
 
  []
 
-<images//imgMeanMax2.png, id=90, 513.92pt x 397.485pt>
+[6 <./images//img4.png> <./images//no_of_rides.pdf>]
+<images//imgMeanMax2.png, id=193, 513.92pt x 397.485pt>
 File: images//imgMeanMax2.png Graphic file (type png)
 <use images//imgMeanMax2.png>
-Package pdftex.def Info: images//imgMeanMax2.png  used on input line 182.
+Package pdftex.def Info: images//imgMeanMax2.png  used on input line 208.
 (pdftex.def)             Requested size: 308.35437pt x 238.49283pt.
 
-Overfull \hbox (10.23897pt too wide) in paragraph at lines 182--183
+Overfull \hbox (10.23897pt too wide) in paragraph at lines 208--209
 [][] 
  []
 
-<images//mean_cvsm_month.pdf, id=91, 542.025pt x 505.89pt>
+<images//mean_cvsm_month.pdf, id=194, 542.025pt x 505.89pt>
 File: images//mean_cvsm_month.pdf Graphic file (type pdf)
 <use images//mean_cvsm_month.pdf>
-Package pdftex.def Info: images//mean_cvsm_month.pdf  used on input line 190.
+Package pdftex.def Info: images//mean_cvsm_month.pdf  used on input line 216.
 (pdftex.def)             Requested size: 260.16904pt x 242.82443pt.
 
-Overfull \hbox (126.01802pt too wide) in paragraph at lines 190--191
+Overfull \hbox (126.01802pt too wide) in paragraph at lines 216--217
 [][] 
  []
 
-<images//max_cvsm.pdf, id=92, 542.025pt x 505.89pt>
+<images//max_cvsm.pdf, id=195, 542.025pt x 505.89pt>
 File: images//max_cvsm.pdf Graphic file (type pdf)
 <use images//max_cvsm.pdf>
-Package pdftex.def Info: images//max_cvsm.pdf  used on input line 196.
+Package pdftex.def Info: images//max_cvsm.pdf  used on input line 222.
 (pdftex.def)             Requested size: 260.16904pt x 242.82443pt.
 
-Overfull \hbox (140.9247pt too wide) in paragraph at lines 196--197
+Overfull \hbox (140.9247pt too wide) in paragraph at lines 222--223
 [][] 
  []
 
-[6 <./images//img4.png> <./images//no_of_rides.pdf>] [7 <./images//imgMeanMax2.
-png> <./images//mean_cvsm_month.pdf> <./images//max_cvsm.pdf
+[7] [8 <./images//imgMeanMax2.png> <./images//mean_cvsm_month.pdf> <./images//m
+ax_cvsm.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./images//max_cvsm.pdf): PDF
  inclusion: multiple pdfs with page group included in a single page
 >]
-<images//boxplot_distribution.pdf, id=228, 1011.78pt x 505.89pt>
+<images//boxplot_distribution.pdf, id=292, 1011.78pt x 505.89pt>
 File: images//boxplot_distribution.pdf Graphic file (type pdf)
 <use images//boxplot_distribution.pdf>
 Package pdftex.def Info: images//boxplot_distribution.pdf  used on input line 2
-08.
+34.
 (pdftex.def)             Requested size: 505.88876pt x 252.94437pt.
-<images//boxplot_distribution2.pdf, id=232, 462.52798pt x 462.52798pt>
+<images//boxplot_distribution2.pdf, id=296, 462.52798pt x 462.52798pt>
 File: images//boxplot_distribution2.pdf Graphic file (type pdf)
 <use images//boxplot_distribution2.pdf>
 Package pdftex.def Info: images//boxplot_distribution2.pdf  used on input line 
-217.
+243.
 (pdftex.def)             Requested size: 231.26341pt x 231.26341pt.
- [8 <./images//boxplot_distribution.pdf> <./images//boxplot_distribution2.pdf
+ [9 <./images//boxplot_distribution.pdf> <./images//boxplot_distribution2.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./images//boxplot_distributi
 on2.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
 e
 >]
-<images//dayofweek_t.png, id=324, 325.215pt x 395.4775pt>
+<images//dayofweek_t.png, id=387, 325.215pt x 395.4775pt>
 File: images//dayofweek_t.png Graphic file (type png)
 <use images//dayofweek_t.png>
-Package pdftex.def Info: images//dayofweek_t.png  used on input line 230.
+Package pdftex.def Info: images//dayofweek_t.png  used on input line 256.
 (pdftex.def)             Requested size: 195.1305pt x 237.28833pt.
 
-Overfull \hbox (86.72716pt too wide) in paragraph at lines 230--231
+Overfull \hbox (86.72716pt too wide) in paragraph at lines 256--257
 [][] 
  []
 
-<images//mean_cvsm_dayofweek.pdf, id=325, 542.025pt x 505.89pt>
+<images//mean_cvsm_dayofweek.pdf, id=388, 542.025pt x 505.89pt>
 File: images//mean_cvsm_dayofweek.pdf Graphic file (type pdf)
 <use images//mean_cvsm_dayofweek.pdf>
-Package pdftex.def Info: images//mean_cvsm_dayofweek.pdf  used on input line 23
-6.
+Package pdftex.def Info: images//mean_cvsm_dayofweek.pdf  used on input line 26
+2.
 (pdftex.def)             Requested size: 260.16904pt x 242.82443pt.
 
-Overfull \hbox (51.38849pt too wide) in paragraph at lines 235--237
+Overfull \hbox (51.38849pt too wide) in paragraph at lines 261--263
 []  [] 
  []
 
-[9 <./images//dayofweek_t.png> <./images//mean_cvsm_dayofweek.pdf>]
-<images//rideable_types.pdf, id=372, 433.62pt x 289.08pt>
+[10 <./images//dayofweek_t.png> <./images//mean_cvsm_dayofweek.pdf>]
+<images//rideable_types.pdf, id=435, 433.62pt x 289.08pt>
 File: images//rideable_types.pdf Graphic file (type pdf)
 <use images//rideable_types.pdf>
-Package pdftex.def Info: images//rideable_types.pdf  used on input line 250.
+Package pdftex.def Info: images//rideable_types.pdf  used on input line 276.
 (pdftex.def)             Requested size: 260.17401pt x 173.44933pt.
- [10 <./images//rideable_types.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 261--262
+ [11 <./images//rideable_types.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 287--288
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 263--264
+Underfull \hbox (badness 10000) in paragraph at lines 289--290
 
  []
 
-[11] (./Report.aux)
-
-Package rerunfilecheck Warning: File `Report.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Report.out':
-(rerunfilecheck)             Before: 1C25E161E2D993CB123EB85F8FED14E4;93
-(rerunfilecheck)             After:  C5CF153B226F02B16D3465624EDE5AF8;236.
+[12] (./Report.aux)
+Package rerunfilecheck Info: File `Report.out' has not changed.
+(rerunfilecheck)             Checksum: BB0169BD2897B17C24A63DBAF675E143;635.
  ) 
 Here is how much of TeX's memory you used:
- 10775 strings out of 476025
- 176568 string characters out of 5790018
+ 10780 strings out of 476025
+ 177075 string characters out of 5790018
  1861388 words of memory out of 5000000
- 31070 multiletter control sequences out of 15000+600000
- 518132 words of font info for 51 fonts, out of 8000000 for 9000
+ 31071 multiletter control sequences out of 15000+600000
+ 518439 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,12n,77p,1233b,674s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
-usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
-r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
-local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lo
-cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
-al/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/loca
-l/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Report.pdf (11 pages, 1052764 bytes).
+></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
+/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
+sr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
+/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/l
+ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
+cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/loc
+al/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on Report.pdf (12 pages, 1007507 bytes).
 PDF statistics:
- 476 PDF objects out of 1000 (max. 8388607)
- 180 compressed objects within 2 object streams
- 40 named destinations out of 1000 (max. 500000)
- 94 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 537 PDF objects out of 1000 (max. 8388607)
+ 202 compressed objects within 3 object streams
+ 44 named destinations out of 1000 (max. 500000)
+ 126 words of extra memory for PDF output out of 10000 (max. 10000000)
 
