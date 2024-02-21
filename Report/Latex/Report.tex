@@ -35,7 +35,7 @@ This report provides the step-by-step explanation of the data analysis performed
 	\item Conclusion
 \end{enumerate}
 
-\section{Importing:}
+\section{Importing}
 
 The bike rides for each month are stored in a separate .csv file. So first, each file is read and stored into a DataFrame (DF), and then all 12 DFs are concatenated into a single multi-index DF. Using a multi-index DF allows the distinction between the different months to still be maintained, while also facilitating the aggregation of values across the entire year when needed. In Figure (\underline{\ref{fig1}}) we can see the first and last 5 entries of bike rides from the concatenated multi-index DF:
 
@@ -49,26 +49,19 @@ The bike rides for each month are stored in a separate .csv file. So first, each
 	
 	In Figure (\underline{\ref{fig1}}) the multi-index of the DF is shown in the first two columns (month, row\_id). Then looking at the entries themselves we can see that the data consists of 13 columns: 
 	\begin{itemize}
-	\item [1)] ride\_id: a unique identification string for each ride
-	\item [2)] rideable\_type: type of bike that was rented
-	\item [3-4)] started(ended)\_at: date and time for the start and end of the ride
-	\item [5-8)]  start(end)\_station\_name(id): name and id of the start and end stations
-	\item [9-12)] start(end)\_lat(lng): latitude and longitude of the start and end stations
-	\item [13)] member\_casual: whether the rider was an annual member or a casual rider 
+	\item [1)] \textbf{ride\_id}: a unique identification string for each ride
+	\item [2)] \textbf{rideable\_type}: type of bike that was rented
+	\item [3-4)] \textbf{started(ended)\_at}: date and time for the start and end of the ride
+	\item [5-8)]  \textbf{start(end)\_station\_name(id)}: name and id of the start and end stations
+	\item [9-12)] \textbf{start(end)\_lat(lng)}: latitude and longitude of the start and end stations
+	\item [13)] \textbf{member\_casual}: whether the rider was an annual member or a casual rider 
 	\end{itemize}
 
-\section{Exploration:}
+\section{Exploration}
 Now that the files have been read and stored into a DF, the next step is to explore the dataset.
  
 \subsection{Dataset size \& duplicates:}
-First, we look at the size of the dataset by counting the number of bike rides in each month. The result is shown in Figure (\underline{\ref{fig3}}) as a series and its visualisation. In the series, we can see the number of bike rides for each month, the total number of bike rides in the dataset (year 2023), and the average per month. The dataset contains in total almost 5.7 Million entries, with an average of approximately 480,000 rides per month. From Decemeber to March the number of rides is relatively lower than the average, which is expected as these are cold months. This is confirmed by the peak highlighted in August. After retrieving this information for the original dataset, the duplicates were dropped, and the entries were counted again. The number of entries before and after turned out to be identical. Therefore the original dataset did not have any duplicates.\\ 
-	
-%	\begin{figure}[h]
-%		\centering
-%		\includegraphics[scale=0.5]{no_of_rides_orig.png}
-%		\caption{Total no of rides per month, for year 2023 and average}
-%		\label{fig3}
-%	\end{figure}
+First, we look at the size of the dataset by counting the number of bike rides in each month. The result is shown in Figure (\underline{\ref{fig3}}) along with its visualisation. On the left, we can see the exact number of bike rides for each month, the total number of bike rides in the dataset (year 2023), and the average per month. The dataset contains in total $\sim$5.7 Million entries, with an average of $\sim$480,000 rides per month. From the visualisation we can easily see that from November to April the number of rides is lower than the average, which is expected as these are cold months. This is confirmed by the peak highlighted in August. After retrieving this information for the original dataset, the duplicates were dropped, and the entries were counted again. The number of entries before and after turned out to be identical. Therefore the original dataset did not have any duplicates.\\ 
 	
 	\begin{figure}[h]
 	\centering
@@ -88,8 +81,8 @@ First, we look at the size of the dataset by counting the number of bike rides i
 	\label{fig3}
 	\end{figure}
 
-\subsection{Null values}
-Next, we look at the percentage of null values for each column. First, the dataset is grouped by month, and then for each month, the percentage of null values in each column is calculated. The result is shown in Figure (\underline{\ref{fig4}}). As we can see the columns \textit{start\_station\_name}, \textit{start\_station\_id}, \textit{end\_station\_name}, \textit{end\_station\_id} in every month have 13-17\% null values. The columns \textit{end\_lat} and \textit{end\_long} have less than 1\% null values. \\
+\subsection{Null values:}
+Next, we look at the percentage of null values for each column. First, the dataset is grouped by month, and then for each month, the percentage of null values in each column is calculated. The result is shown in Figure (\underline{\ref{fig4}}). As we can see the columns \textbf{start\_station\_name(id)}, \textbf{end\_station\_name(id)} in every month have 13-17\% null values. The columns \textbf{end\_lat(long)} have less than 1\% null values, and otherwise there are no null values. \\
 	
 	\begin{figure}[h]
 	%\hspace{-0.5in}
@@ -99,8 +92,8 @@ Next, we look at the percentage of null values for each column. First, the datas
 	\label{fig4}
 	\end{figure}
 	
-\subsection{Unique values}
-Here we look at the unique (distinct) values for each column in the month of May. The choice of the month of May is random, as the unique values for several other months were inspected and there does not seem to be a significant difference. The result is shown in Figure (\ref{fig2}). 
+\subsection{Unique values:}
+Here we look at the unique (distinct) values for each column in the month of May. The choice of the month of May is random, as the unique values for several other months were inspected and there does not seem to be a significant difference. The result is shown in Figure (\underline{\ref{fig2}}). 
 	
 	\begin{figure}[h]
 	\centering
@@ -108,100 +101,86 @@ Here we look at the unique (distinct) values for each column in the month of May
 	\caption{No. of unique values for every column for the month of May}
 	\label{fig2}
 	\end{figure}
-Next we investigate each unique value, in the light of the fact that the total number of rides in the month of May is 604,827  (Fig. \underline{\ref{fig3}}):
+Next we investigate each unique value, knowing that the total number of rides in the month of May is 604,827  (Fig. \underline{\ref{fig3}}):
 	\begin{itemize}
 	\item \textbf{ride\_id\_unique= 604,827}   \\
 	As expected, ride\_id has as many unique values as the number of entries in the DF.
 	\item \textbf{rideable\_type\_unique = 3}  \\
 	These 3 values are the types of bikes that are offered by the company, which are: \\
-	electric\_bike, classic\_bike, docked\_bike.
+	(electric/classic/docked).
 	\item \textbf{started\_at\_unique = 503,683} , \textbf{ended\_at\_unique = 505,259} \\
-	Seeing as how these columns are datetimes (yy-mm-dd hh:mm:ss), one may have expected them to have as many distinct values as the number of entries (604,827). However, the number of unique values in these columns is less than the number of entries by 16\%. Which means that 16\% of the bikes rides have the same started\_at as other rides. To explore this a bit further, one of these duplicates has been retrieved and is shown in Figure (\underline{\ref{fig10}}). By looking at the entries, it is clear that they are indeed different rides but with the exact same start time. These unlikely incidents can be a result of having such a large dataset. For example, when looking at the month of January, we find that the percentage of rides with the same started\_at time is just 6\%  \\
+	Seeing as how these columns are datetimes (yy-mm-dd hh:mm:ss), one may have expected them to have as many distinct values as the number of entries (604,827). However, the number of unique values in these columns is less than the number of entries by 16\%. Which means that 16\% of the bikes rides have the same \textbf{started\_at} as other rides. To explore this a bit further, one of these duplicates has been retrieved and is shown in Figure (\underline{\ref{fig10}}). By looking at the entries, it is clear that they are indeed different rides but with the exact same start time. These unlikely incidents can be a result of having such a large dataset. For example, when looking at the month of January, where there are a total of 190,301 rides we find that the percentage of rides with the same \textbf{started\_at} goes down to 6\%  \\
 	
 	\begin{figure}[h]
 	\hspace{0.3in}
 	\includegraphics[scale=0.4]{imgDups1.png}
-	\caption{Entries from May that have the same \textit{started\_at} date and time}
+	\caption{Entries from May that have the same \textbf{started\_at} date and time}
 	\label{fig10}
 	\end{figure}
 	
 	\item \textbf{start\_station\_name(id)\_unique = 1287 and 1250}\\
 	 \textbf{end\_station\_name(id)\_unique = 1254 and 1210} \\
-	Since there is a limited number of stations, it is expected that these columns have a smaller number of unique values than the number of entries. However, one would have expected the number of station names and ids to be the same, whereas the ids are less than the names by a small fraction. Which could either by accounted for by the null values (Fig. \underline{\ref{fig2}}) or could mean that there are stations that have the different names but the same id.
+	Since there is a limited number of stations, it is expected that these columns have a smaller number of unique values than the number of entries. However, one would have expected the number of unique station names and ids to be the same. Whereas the unique ids are less than the names by a small fraction. Which could either by accounted for by the null values (Fig. \underline{\ref{fig2}}) or could mean that there are stations that have the different names but the same id.
 	
 	\item \textbf{start\_lat(long)\_unique = 188,591 and 185,419} \\
 	\textbf{end\_lat(long)\_unique = 4759 and 4762} \\
-	The start latitude and longitude numbers seem to be as expected, which is less than the total number of entries, but more than the number of stations (this is based on the assumption that the exact location where a bike is parked can vary within the station especially that the values are given to the $6^{th}$ decimal place). However, there is a large difference between the number of values in the start ($\sim$188,000) and the numbers in the end ($\sim$4800). This difference cannot be accounted for by the null values in the end columns, since these were less than 1\%. If these values are true, that would mean that users rode there bikes from many start locations, but mostly ended up in a much smaller set of locations. Which cannot be the case since that would have been reflected in a similar difference between the number of start and end stations. 
+	The start latitude and longitude numbers seem to be as expected, which is less than the total number of entries, but more than the number of stations (this is based on the assumption that the exact location where a bike is parked can vary within the station especially that the values are given to the $6^{th}$ decimal place). However, there is a large difference between the number of values in the start ($\sim$188,000) and the numbers in the end ($\sim$4800). This difference cannot be accounted for by the null values in the end columns, since these were less than 1\%. If these values are true, that would mean that users rode there bikes from many start locations, but mostly ended up in a much smaller set of locations. Which cannot be the case since that would have been reflected in a similar difference between the number of start and end stations. This discrepancy occurs in all 12 months. 
 	\item \textbf{member\_casual\_unique} = 2 \\
-	These 2 values are the types of riders, which are: member, casual.
+	These 2 values are the types of riders, which are: (casual/member).
 	\end{itemize}
 
 	
-\section*{Cleaning:}
+\section{Cleaning}
 After exploring the dataset, we can see that the extractable information can be divided into information about the:
 	\begin{enumerate} 
 	\item rider (casual/member)
 	\item bike (electric/classic/docked)
 	\item ride (start-end: time, date, location)
 	\end{enumerate}
-	
-Since, the goal of the analysis is to find out whether to target converting casual riders into members or not, it seems that all the information is relevant to the analysis, with the exception of the ride location. This is based on the assumption that the amount paid by the rider is based on how long the bike was rented, regardless of where. Furthermore, the geographical location would have been important if for example the goal of the analysis was to find out whether more stations should be added and where to do so. Therefore, since the locations seem to be irrelevant, contain null values and discrepancies, these columns will be dropped in the cleaning process. The column \textit{ride\_id} also does not provide any valuable information for the current analysis. \\
 
-Another task to be performed in the cleaning phase is data formatting. We have already looked at the columns \textit{rideable\_type} and \textit{member\_casual}, and ensured that they have only the expected values and no nulls. As for the columns \textit{started\_at} and \textit{ended\_at}, these do not have null values, but still need to be checked to ensure that the \textit{ended\_at} time always comes after \textit{started\_at} time. In order to compare the values in these columns, they first need to converted from strings of characters to a numerical date-time format. \\
+\subsection{Drop columns:}
+The only columns that had null values and discrepancies were the ones related to the ride location. Assuming that the amount paid by the rider is based on how long in time the bike was rented, then the information related to the ride length can be extracted from the columns \textbf{started\_at} and \textbf{ended\_at} and the columns related to the ride location can then be dropped. The column \textbf{ride\_id} also does not provide any valuable information for the current analysis and is rendered redundant by the index \textbf{row\_id}. \\
 
-\begin{itemize}
-	\item \textit{drop\_and\_change\_format}:\\
-	  This method performs three tasks. First, it drops all the columns related to geographical location and ride id. Second, it converts the columns \textit{started\_at} and \textit{ended\_at} from strings of characters to a numerical datetime format. Finally, the method returns a Series of flags which indicate whether or not the \textit{ended\_at} time is before the \textit{started\_at} time. 
-	  
-	  \item \textit{clean\_data}:\\
-	  By using the flags returned by the method \textit{drop\_and\_change\_format}, the rides where \textit{ended\_at} time is before the \textit{started\_at} time can be filtered out as shown in Figure (\ref{fig8}). Looking at these entries, we can see that there are cases when the \textit{ended\_at} time is before the \textit{started\_at} time by just a seconds. It can be that in these incidents the start and end time were switched due to some glitch, perhaps the bike rental time being very short (shorter than the server response time). But there are also cases when the time difference is a few minutes. In the entire dataset of approximately 5.7 Million entries, there is a total of 272 entries that have this issue. Since, the dataset is large, the method \textit{clean\_data} simply drops these entries. \\
+\subsection{Data formatting:}
+We have already looked at the columns \textbf{rideable\_type} and \textbf{member\_casual}, and ensured that they have only the expected values and no nulls. As for the columns \textbf{started\_at} and \textbf{ended\_at}, these do not have null values, but still need to be checked to ensure that the \textbf{ended\_at} time always comes after \textbf{started\_at} time. In order to do that, these columns are first converted from strings of characters to a numerical date-time format. Next, the rides where the \textbf{ended\_at} time is before the \textbf{started\_at} time are filtered and shown in Figure (\underline{\ref{fig8}}). In the entire dataset of $\sim$5.7 Million entries, there is a total of 272 entries that have this issue. Since, the dataset is large, the entries are simply dropped. \\
 
 	\begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.6]{imgNEG.png}
-	\caption{Entries where the ended\_at time is before the started\_at time}
+	\includegraphics[scale=0.6]{same_started_at.png}
+	\caption{Entries where the \textbf{ended\_at} time is before the \textbf{started\_at} time}
 	\label{fig8}
 	\end{figure}
 	
-	\end{itemize}
 	
-\section*{Preparation:}
-Now that the dataset has been explored and cleaned, the next step is to prepare the data needed for analysis. Based on the assumption that the rides are charged according to how long they were rented, a column \textit{ride\_length} is added. Another column \textit{day\_of\_week} is also added to explore the behaviour of different riders a bit further. 
-
-\begin{itemize}
-	\item \textit{prepare\_data}:\\
-	This method adds the two new columns: \textit{ride\_length}: the difference between the columns \textit{ended\_at} and \textit{started\_at} times, and \textit{day\_of\_week}: extracted from the date in \textit{started\_at}. The method then drops the columns \textit{started\_at} and \textit{ended\_at}, since the new columns make them redundant.
+\section{Preparation}
+In order to prepare the data for analysis, two new columns are added. First is \textbf{ride\_length}: the difference between the columns \textbf{ended\_at} and \textbf{started\_at} times. Second is \textbf{day\_of\_week}: extracted from the date in \textbf{started\_at}. The columns \textbf{started\_at} and \textbf{ended\_at} are then dropped, since the new columns make them redundant.
 	
-\end{itemize}
 
-\section*{Analysis:}
-Finally, the data can be analysed in order to determine how casual riders and members differ.
+\section{Analysis}
+Finally, the data can be analysed in order to determine how casual riders and members use the bikes differently.
 
- \begin{itemize}
-	\item \textit{count\_rides\_per\_rider}:\\
-	This method produces a pivot table whose index is the month, and the columns are the number of rides for each rider type. The method also returns the total number of rides for the entire year. The resulting pivot table is shown in Figure (\ref{fig17_1}), and is visualised using the plot shown on the right Figure (\ref{fig17_2}). From the plot we observe that, per month there is approximately 100,000 more rides by members than by casual riders. Next, we see that rides by members and casual riders follow the same pattern of peaking during the summer months, and dropping during the winter months. 
+\subsection{No of rides per rider type:}
+We have already seen the number of rides per month in Figure (\underline{\ref{fig3}}). Now we will look at the same information, however this time per rider type; i.e member/casual. In order to do this, a pivot table is produced where the index is the month, and the values are the number of rides per rider type. This table is shown in Figure (\underline{\ref{fig17}}) along with its visualisation. Below the pivot table, we can see the total number of rides in the year 2023 per rider type. Here we see that of 5.7 Million rides, 36\% were by casual riders, and 64\% were made by members. In the plot we see the number of rides as stacked bars; i.e. the number of rides for annual members stacked ontop of the number of rides for casual riders.  From the plot we observe that, rides by members and casual riders follow the same pattern of peaking during the summer months, and dropping during the winter months. However, we see that the percentage of casual riders to members fluctuates throughout the year. In January there were 21\% rides by casual riders, and 79\% by members, whereas in August there were 40\% rides by casual riders, and 60\% by members. \\
+\newline
 
 	\begin{figure}[h]
-	\hspace{0.8in}
-	\begin{subfigure}{.2\textwidth}
-		\includegraphics[scale=0.55]{img4.png} 
-		\caption{}
-		\label{fig17_1}
+	\begin{subfigure}{.3\textwidth}
+	%\hspace{-0.4 in}
+		\includegraphics[scale=0.5]{no_of_rides_per_rider.png} 
 	\end{subfigure}
-	\begin{subfigure}{.55\textwidth}
-	\hspace{1.2in}
-		\includegraphics[scale=0.48]{no_of_rides.pdf}
-		\caption{}
-		\label{fig17_2}
+	\begin{subfigure}{.6\textwidth}
+	\hspace{-0.35in}
+		\includegraphics[scale=0.46]{no_of_rides.pdf}
 	\end{subfigure}
 	\caption{Total no of rides per rider type}
+	\label{fig17}
 	\end{figure}
 	
-\item \textit{mean\_max\_by\_month}:\\	
+\subsection{mean\_max\_by\_month}	
 	This method produces a pivot table whose index is the month, and the columns are the mean and maximum ride length for each rider type. The method also calculates the mean and max values across the entire year. The pivot table is shown in Figure (\ref{fig11_1}), and the corresponding visualisations are shown below. From the plot of the mean values in Figure (\ref{fig11_2_1}) we observe that casual riders have longer rides, than members across the entire year. Also, the mean ride length for casual riders varies across the year from approximately 20 minutes in the colder months to a peak of 35 minutes in August. As for members, their mean ride length changes only from 10 to 13 minutes. When looking at the maximum ride length plot in Figure (\ref{fig11_2_2}) we see a similar pattern: casual riders have longer rides, and their maximum ride lengths changes from 1 day in the cold months to 68 days in August. As opposed to, members whom have a maximum ride length of 1 day all throughout the year.\\
 	
 However, it is important to note here that such longer rides, as seen in the maximum ride length plot, are outliers that occur quite rarely in the dataset. This can be seen when plotting the entire dataset distribution of ride lengths using a box plot as shown in Figure (\ref{fig13}).  
-\pagebreak
+
 	\begin{figure}[h]
 	\centering
 		\begin{subfigure}[b]{0.55\textwidth}
@@ -228,7 +207,6 @@ However, it is important to note here that such longer rides, as seen in the max
 	\end{figure}
 	
 
-\pagebreak
 	\begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.5]{boxplot_distribution.pdf} 
@@ -244,10 +222,10 @@ A box plot typically divides the values in a distribution into 4 quartiles (0-25
 	\caption{Box plot comparison between the ride lengths of casual and member riders without outliers}
 	\label{fig15}
 	\end{figure}
-\pagebreak
+
 Figure (\ref{fig15}) shows that the main distribution (i.e. without outliers) of ride lengths for casual riders varies between [0 - 46] minutes, and that the middle 50\% of the values are between [6 - 22] minutes. As opposed to members whose ride length vary between [0 - 29] minutes, and the middle 50\% are between [4 - 14] minutes. The mean values calculated from the entire distribution are marked on the plot using the green stars. For casual riders the mean is 27.7 minutes (slightly higher than the mean calculated first by month and then for the year = 25.7 Figure (\ref{fig11_1})), and for members it is 12 minutes.  
 	
-	\item \textit{mean\_by\_day\_of\_week:}\\
+\textit{mean\_by\_day\_of\_week:}\\
 	So far we have compared the rider types either by first grouping the data using the month (Fig. \ref{fig11_2_1}) or by looking at the entire distribution (Fig. \ref{fig13}). In order to get a different perspective, we will now look at the mean value of the ride length after the data has been grouped by the day of the week. The resulting pivot table as well as its visualisation are shown in Figure (\ref{fig14}). Here we see the same higher average for the casual riders when compared to members, with a peak for casual riders during the weekend. 
 	
 	\begin{figure}[h]
@@ -268,7 +246,7 @@ Figure (\ref{fig15}) shows that the main distribution (i.e. without outliers) of
 	\end{figure}
 	\pagebreak
 
-	\item \textit{count\_rideable\_type}:\\
+\textit{count\_rideable\_type}:\\
 	This method produces a pivot table with the rider type (casual/member) as an index, and the columns are rideable type, which is the type of bike (classic/docked/electric). The values are the number of entries in each category. The result is visualised in Figure (\ref{fig16}). From the histogram we can see that for classic and electric bikes, there are more member rides than casual rides. Which is to be expected, since the overall number of member rides is larger than the casual riders (Fig. \ref{fig17_1}). However, the interesting finding is that when it comes to docked bikes, only casual riders have used those in 2023.
 	
 	\begin{figure}[h]
@@ -278,15 +256,14 @@ Figure (\ref{fig15}) shows that the main distribution (i.e. without outliers) of
 	\label{fig16}
 	\end{figure}
 	
-\end{itemize}
 
 \pagebreak
 
-\section*{Conclusion:}
+\section{Conclusion}
 
-In this report, the analysis of a bike-sharing case-study was presented. First, the dataset was explored by looking at   what the original data consisted of, what were the unique values in each column, as well as the percentage of null values. For the year 2023, on average, there were $\sim$480,000 rides per month. During the cold months December-March the rides dropped to $\sim$200,00, and in the summer months they went up to $\sim$770,000 rides. No duplicates were found in the dataset, but the columns \textit{start(end)\_station\_name(id)} had 13-17\% null values, and the columns \textit{end\_lat(long)} had less than 1\% null values. When looking at the number of unique values for each column, some discrepancies were found, for example there were more station names than there were station ids. Next, the data was cleaned by dropping the columns that had inconsistencies, null values or were irrelevant to the analysis. The data was also formatted by converting the start and end times into date-time numerical values and the entries where the end time was before the start were dropped. In order to prepare the data for analysis, the columns ride length and day of the week were added. \\
+In this report, the analysis of a bike-sharing case-study was presented. First, the dataset was explored by looking at   what the original data consisted of, what were the unique values in each column, as well as the percentage of null values. For the year 2023, on average, there were $\sim$480,000 rides per month. During the cold months December-March the rides dropped to $\sim$200,00, and in the summer months they went up to $\sim$770,000 rides. No duplicates were found in the dataset, but the columns \textbf{start(end)\_station\_name(id)} had 13-17\% null values, and the columns \textbf{end\_lat(long)} had less than 1\% null values. When looking at the number of unique values for each column, some discrepancies were found, for example there were more start locations (latitude and longitude) than there were end locations. Next, the data was cleaned by dropping the columns that had inconsistencies, null values or were irrelevant to the analysis. The data was also formatted by converting the start and end times into date-time numerical values and the entries where the end time was before the start were dropped. In order to prepare the data for analysis, the columns \textbf{ride\_length} and \textbf{day\_of\_week} were added. \\
 
-The data was then analysed by first looking at the number of rides performed by members versus casual riders. The entire dataset for the year 2023 consists of 5.7 Million rides, 64\% of which were made by members, and 36\% were by casual riders. The dataset was then grouped by month, and the average and maximum ride length were calculated per rider type. For members the mean ride length in 2023 was $\sim$12 minutes, whereas for casual riders it was $\sim$25 minutes. When looking at the maximum ride length it was shown that members never rented the bike for more than one day, whereas casual riders had a maximum ride length ranging from 1 - 68 days. However, by plotting the entire distribution of ride length values using box plots, it was shown that such longer rides were outliers that occurred quite rarely. The box plots showed that the main distribution of ride lengths after ignoring the outliers can be summarised by the values shown in Table (\ref{table1}): \\
+The data was then analysed by first looking at the number of rides performed by members versus casual riders. The entire dataset for the year 2023 consists of 5.7 Million rides, 64\% of which were made by members, and 36\% were by casual riders. The dataset was then grouped by month, and the average and maximum ride length were calculated per rider type. For members the mean ride length in 2023 was $\sim$12 minutes, whereas for casual riders it was $\sim$25 minutes. When looking at the maximum ride length it was shown that members never rented the bike for more than one day, whereas casual riders had a maximum ride length ranging from 1 - 68 days. However, by plotting the entire distribution of ride length values using box plots, it was shown that such longer rides were outliers that occurred quite rarely. The box plots showed that the main distribution of ride lengths after ignoring the outliers can be summarised by the values shown in Table (\underline{\ref{table1}}): \\
 
 \begin{table}[h]
 \begin{center}
@@ -305,6 +282,6 @@ member 	& 0 - 4 		& 4 - 14		& 14 - 29 & 12 \\
 \end{table}
 
 
-By looking at the results shown in Table (\ref{table1}) we can confidently conclude that casual riders have longer ride lengths, whether we compare the mean across the whole dataset, or if we compare each quartile of the distribution. Therefore, this analysis supports the recommendation to target converting casual riders into members. Lastly, it was found that in the year 2023, docked bikes were used only by casual riders. So it might be beneficial to use that information within the marketing campaign.
+By looking at the results shown in Table (\underline{\ref{table1}}) we can confidently conclude that casual riders have longer ride lengths, whether we compare the mean across the whole dataset, or if we compare each quartile of the distribution. Therefore, this analysis supports the recommendation to target converting casual riders into members. Lastly, it was found that in the year 2023, docked bikes were used only by casual riders. So it might be beneficial to use that information within the marketing campaign.
 
 \end{document}
